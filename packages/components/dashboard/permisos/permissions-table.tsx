@@ -13,7 +13,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@repo/ui/select";
-import { getIcon } from "@/lib/utils/icons";
+import { getIcon } from "@repo/lib/utils/icons";
 import {
   Popover,
   PopoverContent,
@@ -201,7 +201,7 @@ export default function PermissionsTable({
             placeholder="Buscar permisos..."
             defaultValue={currentSearch}
             onChange={(e) => setSearchInput(e.target.value)}
-            className="w-full pl-10 pr-4 md:py-2 py-2.5 border border-input rounded-lg focus:outline-hidden focus:ring-2 focus:ring-primary focus:border-primary bg-background text-foreground placeholder-muted-foreground text-base"
+            className="w-full pl-10 pr-4 md:py-2 py-2.5 border border-input rounded-lg focus:outline-hidden focus:ring-2 focus:ring-primary focus:border-primary text-custom-accent-primary placeholder-muted-foreground "
           />
         </div>
 

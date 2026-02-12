@@ -40,14 +40,14 @@ export default async function UsersPackage({ searchParams }: PageProps) {
       <div className="mb-6 p-4">
         <a 
           href="/dashboard/seguridad" 
-          className="inline-flex items-center text-custom-text-primary hover:text-custom-accent-primary p-2 hover:bg-custom-accent-hover rounded-lg transition-all duration-200"
+          className="inline-flex items-center text-custom-accent-primary hover:text-custom-text-primary p-2 hover:bg-custom-accent-hover rounded-lg transition-all duration-200"
         >
           <ArrowLeft className="w-5 h-5 mr-2" />
         </a>
       </div>
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 py-8">
         <div className="mb-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-          <h1 className="text-3xl font-bold text-custom-text-primary">Usuarios</h1>
+          <h1 className="text-3xl font-bold text-custom-accent-primary">Usuarios</h1>
           {canInvite && <InviteUserModal />}
         </div>
 

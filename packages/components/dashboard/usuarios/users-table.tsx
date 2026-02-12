@@ -210,7 +210,7 @@ export default function UsersTable({
     }
     return currentOrder === "asc" ? (
       <svg
-        className="h-4 w-4 text-[#987E71]" // Cambiado a color principal
+        className="h-4 w-4 text-custom-accent-primary" // Cambiado a color principal
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -224,7 +224,7 @@ export default function UsersTable({
       </svg>
     ) : (
       <svg
-        className="h-4 w-4 text-[#987E71]" // Cambiado a color principal
+        className="h-4 w-4 text-custom-accent-primary" // Cambiado a color principal
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -311,7 +311,7 @@ export default function UsersTable({
             placeholder="Buscar por nombre o correo..."
             value={searchInput}
             onChange={(e) => handleSearchChange(e.target.value)}
-            className="w-full pl-10 pr-4 md:py-2 py-2.5 border border-gray-300 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-[#987E71] focus:border-[#987E71] text-base" // Cambiado focus ring y border
+            className="w-full pl-10 pr-4 md:py-2 py-2.5 border border-gray-300 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-[#987E71] focus:border-[#987E71] text-custom-accent-primary" // Cambiado focus ring y border
           />
         </div>
 
@@ -320,7 +320,7 @@ export default function UsersTable({
           <select
             value={profileFilter}
             onChange={(e) => handleProfileFilterChange(e.target.value)}
-            className="w-full px-3 md:py-2 py-2.5 border border-gray-300 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-[#987E71] focus:border-[#987E71] text-base bg-white" // Cambiado focus ring y border
+            className="w-full px-3 md:py-2 py-2.5 border border-gray-300 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-[#987E71] focus:border-[#987E71] text-custom-accent-primary bg-white" // Cambiado focus ring y border
           >
             <option value="">Todos los perfiles</option>
             {allProfiles.map((profile) => (
@@ -335,7 +335,7 @@ export default function UsersTable({
         {(searchInput || profileFilter) && (
           <button
             onClick={clearFilters}
-            className="px-4 py-2 text-sm text-gray-600 hover:text-[#987E71] border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors" // Cambiado hover color
+            className="px-4 py-2 text-sm text-gray-600 hover:text-custom-accent-primary border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors" // Cambiado hover color
           >
             Limpiar
           </button>
@@ -345,7 +345,7 @@ export default function UsersTable({
       {/* Loading indicator */}
       {isPending && (
         <div className="flex justify-center">
-          <div className="bg-[#f5f0ed] text-[#987E71] px-4 py-2 rounded-lg text-sm"> {/* Color de fondo claro y texto principal */}
+          <div className="bg-[#f5f0ed] text-custom-accent-primary px-4 py-2 rounded-lg text-sm"> {/* Color de fondo claro y texto principal */}
             Cargando...
           </div>
         </div>
@@ -419,7 +419,7 @@ export default function UsersTable({
           <div className="hidden md:block bg-white rounded-lg shadow-sm overflow-hidden border border-gray-200">
             <table className="min-w-full divide-y divide-gray-200">
               {/* Fondo claro y texto principal */}
-              <thead className="bg-[#f5f0ed] text-[#987E71]"> 
+              <thead className="bg-[#f5f0ed] text-custom-accent-primary"> 
                 <tr>
                   <th
                     onClick={() => handleSort("full_name")}
@@ -539,7 +539,7 @@ export default function UsersTable({
                               <button className="p-2 rounded-full hover:bg-[#f5f0ed] transition-colors"> {/* Hover con color claro */}
                                 <MoreVertical
                                   size={18}
-                                  className="text-gray-500 hover:text-[#987E71]" // Hover con color principal
+                                  className="text-gray-500 hover:text-custom-accent-primary" // Hover con color principal
                                 />
                               </button>
                             </PopoverTrigger>
@@ -633,7 +633,7 @@ export default function UsersTable({
                           <PopoverTrigger asChild>
                             <button className="p-1 rounded-full hover:bg-[#f5f0ed]"> {/* Hover con color claro */}
                               <svg
-                                className="h-5 w-5 text-gray-500 hover:text-[#987E71]" // Hover con color principal
+                                className="h-5 w-5 text-gray-500 hover:text-custom-accent-primary" // Hover con color principal
                                 viewBox="0 0 20 20"
                                 fill="currentColor"
                               >
@@ -676,7 +676,7 @@ export default function UsersTable({
             <button
               onClick={() => handlePageChange(currentPage - 1)}
               disabled={currentPage === 1 || isPending}
-              className="px-3 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-[#f5f0ed] hover:text-[#987E71] disabled:opacity-50 disabled:cursor-not-allowed flex items-center" // Hover con color claro
+              className="px-3 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-[#f5f0ed] hover:text-custom-accent-primary disabled:opacity-50 disabled:cursor-not-allowed flex items-center" // Hover con color claro
             >
               <svg
                 className="h-4 w-4"
@@ -719,7 +719,7 @@ export default function UsersTable({
                         className={`px-3 py-1 border rounded-md text-sm font-medium ${
                           p === currentPage
                             ? "bg-[#987E71] text-white border-[#987E71] hover:bg-[#b19587]" // Color principal y hover
-                            : "border-gray-300 text-gray-700 hover:bg-[#f5f0ed] hover:text-[#987E71]" // Hover con color claro y texto principal
+                            : "border-gray-300 text-gray-700 hover:bg-[#f5f0ed] hover:text-custom-accent-primary" // Hover con color claro y texto principal
                         } disabled:opacity-50 disabled:cursor-not-allowed`}
                       >
                         {p}
@@ -732,7 +732,7 @@ export default function UsersTable({
             <button
               onClick={() => handlePageChange(currentPage + 1)}
               disabled={currentPage === initialData.totalPages || isPending}
-              className="px-3 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-[#f5f0ed] hover:text-[#987E71] disabled:opacity-50 disabled:cursor-not-allowed flex items-center" // Hover con color claro
+              className="px-3 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-[#f5f0ed] hover:text-custom-accent-primary disabled:opacity-50 disabled:cursor-not-allowed flex items-center" // Hover con color claro
             >
               <svg
                 className="h-4 w-4"
