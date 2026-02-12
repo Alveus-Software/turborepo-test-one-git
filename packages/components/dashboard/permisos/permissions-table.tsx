@@ -117,7 +117,7 @@ export default function PermissionsTable({
 
     return currentOrder === "asc" ? (
       <svg
-        className="h-4 w-4 text-[#987E71]"
+        className="h-4 w-4 text-custom-accent-primary"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -131,7 +131,7 @@ export default function PermissionsTable({
       </svg>
     ) : (
       <svg
-        className="h-4 w-4 text-[#987E71]"
+        className="h-4 w-4 text-custom-accent-primary"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -279,7 +279,7 @@ export default function PermissionsTable({
       {/* Loading indicator */}
       {isPending && (
         <div className="flex justify-center">
-          <div className="bg-[#f5f0ed] text-[#987E71] px-4 py-2 rounded-lg text-sm">
+          <div className="bg-[#f5f0ed] text-custom-accent-primary px-4 py-2 rounded-lg text-sm">
             Cargando...
           </div>
         </div>
@@ -346,7 +346,7 @@ export default function PermissionsTable({
           {/* Vista Desktop - Tabla */}
           <div className="hidden md:block bg-white rounded-lg shadow-sm overflow-hidden border border-gray-200">
             <table className="min-w-full divide-y divide-gray-200">
-              <thead className="bg-[#f5f0ed] text-[#987E71]">
+              <thead className="bg-[#f5f0ed] text-custom-text-primary">
                 <tr>
                   <th
                     onClick={() => handleSort("name")}
@@ -442,7 +442,7 @@ export default function PermissionsTable({
                               <button className="p-2 rounded-full hover:bg-[#f5f0ed] transition-colors">
                                 <MoreVertical
                                   size={18}
-                                  className="text-gray-500 hover:text-[#987E71]"
+                                  className="text-gray-500 hover:text-custom-text-primary"
                                 />
                               </button>
                             </PopoverTrigger>
@@ -534,7 +534,7 @@ export default function PermissionsTable({
                           <PopoverTrigger asChild>
                             <button className="p-1 rounded-full hover:bg-[#f5f0ed]">
                               <svg
-                                className="h-5 w-5 text-gray-500 hover:text-[#987E71]"
+                                className="h-5 w-5 text-gray-500 hover:text-custom-text-primary"
                                 viewBox="0 0 20 20"
                                 fill="currentColor"
                               >
@@ -603,7 +603,7 @@ export default function PermissionsTable({
             <button
               onClick={() => handlePageChange(currentPage - 1)}
               disabled={currentPage === 1 || isPending}
-              className="px-3 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-[#f5f0ed] hover:text-[#987E71] disabled:opacity-50 disabled:cursor-not-allowed flex items-center"
+              className="px-3 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-[#f5f0ed] hover:custom-text-primary disabled:opacity-50 disabled:cursor-not-allowed flex items-center"
             >
               <svg
                 className="h-4 w-4"
@@ -644,7 +644,7 @@ export default function PermissionsTable({
                         className={`px-3 py-1 border rounded-md text-sm font-medium ${
                           p === currentPage
                             ? "bg-[#987E71] text-white border-[#987E71] hover:bg-[#b19587]"
-                            : "border-gray-300 text-gray-700 hover:bg-[#f5f0ed] hover:text-[#987E71]"
+                            : "border-gray-300 text-gray-700 hover:bg-[#f5f0ed] hover:text-custom-text-primary"
                         } disabled:opacity-50 disabled:cursor-not-allowed`}
                       >
                         {p}
@@ -657,7 +657,7 @@ export default function PermissionsTable({
             <button
               onClick={() => handlePageChange(currentPage + 1)}
               disabled={currentPage === initialData.totalPages || isPending}
-              className="px-3 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-[#f5f0ed] hover:text-[#987E71] disabled:opacity-50 disabled:cursor-not-allowed flex items-center"
+              className="px-3 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-[#f5f0ed] hover:text-custom-text-primary disabled:opacity-50 disabled:cursor-not-allowed flex items-center"
             >
               <svg
                 className="h-4 w-4"
