@@ -35,6 +35,40 @@ interface UpdateWhatsAppPayload {
   companyId?: string;
 }
 
+// Interfaces para configuración de Teléfono
+export interface PhoneConfig {
+  id: string;
+  key: string;
+  value: string;
+  company_id?: string;
+  active: boolean;
+  created_at: string;
+  updated_at: string;
+  created_by?: string;
+  updated_by?: string;
+}
+
+export interface PhoneConfigForm {
+  id?: string;
+  phone_number: string;
+  active: boolean;
+}
+
+interface CreatePhonePayload {
+  phone_number: string;
+  active: boolean;
+  userId: string;
+  companyId?: string;
+}
+
+interface UpdatePhonePayload {
+  id: string;
+  phone_number: string;
+  active: boolean;
+  userId: string;
+  companyId?: string;
+}
+
 export async function createWhatsAppConfig({
   phone_number,
   active,
@@ -934,4 +968,145 @@ export async function getMinReservationTimeMessage(companyId?: string): Promise<
   } else {
     return `Las citas deben reservarse con al menos ${minutes} ${minutes === 1 ? 'minuto' : 'minutos'} de anticipación.`;
   }
+}
+
+export async function getPhoneConfig(companyId?: string) {
+  const supabase = await createClient();
+
+  let query = supabase
+    .from("configurations")
+    .select("*")
+    .eq("key", "contact_phone") 
+    .order("created_at", { ascending: true });
+
+  if (companyId) {
+    query = query.eq("company_id", companyId);
+  }
+
+  const { data, error } = await query.limit(1).single();
+
+  if (error) {
+    if (error.code === "PGRST116") {
+      return {
+        success: false,
+        message: "No se encontró una configuración activa de Teléfono.",
+        data: null,
+      };
+    }
+
+    return {
+      success: false,
+      message: `Error al obtener la configuración: ${error.message}`,
+      data: null,
+    };
+  }
+  
+  return {
+    success: true,
+    message: "Configuración obtenida correctamente.",
+    data: data as PhoneConfig,
+  };
+}
+
+export async function createPhoneConfig({
+  phone_number,
+  active,
+  userId,
+  companyId,
+}: CreatePhonePayload) {
+  const supabase = await createClient();
+
+  const { data, error } = await supabase
+    .from("configurations")
+    .insert([
+      {
+        key: "contact_phone",
+        value: phone_number,
+        active,
+        company_id: companyId || null,
+        created_by: userId,
+      },
+    ])
+    .select()
+    .single();
+
+  if (error) {
+    return { success: false, message: error.message };
+  }
+
+  return { success: true, data: data as PhoneConfig };
+}
+
+export async function updatePhoneConfig({
+  id,
+  phone_number,
+  active,
+  userId,
+  companyId,
+}: UpdatePhonePayload) {
+  const supabase = await createClient();
+
+  const { data, error } = await supabase
+    .from("configurations")
+    .update({
+      value: phone_number,
+      active,
+      company_id: companyId || null,
+      updated_at: new Date().toISOString(),
+      updated_by: userId,
+    })
+    .eq("id", id)
+    .select()
+    .single();
+
+  if (error) {
+    return { success: false, message: error.message };
+  }
+
+  return { success: true, data: data as PhoneConfig };
+}
+
+export async function deletePhoneConfig(id: string, userId: string) {
+  const supabase = await createClient();
+
+  const { data, error } = await supabase
+    .from("configurations")
+    .update({
+      active: false,
+      updated_at: new Date().toISOString(),
+      updated_by: userId,
+      deleted_at: new Date().toISOString(),
+      deleted_by: userId,
+    })
+    .eq("id", id);
+
+  if (error) {
+    return { success: false, message: error.message };
+  }
+
+  return { success: true, data };
+}
+
+// Versión de eliminación física (si necesitas ambas)
+export async function hardDeletePhoneConfig(id: string) {
+  const supabase = await createClient();
+
+  const { data, error } = await supabase
+    .from("configurations")
+    .delete()
+    .eq("id", id);
+
+  if (error) {
+    return { success: false, message: error.message };
+  }
+
+  return { success: true, data };
+}
+
+export async function getActivePhoneNumber(companyId?: string) {
+  const config = await getPhoneConfig(companyId);
+  if (config.success && config.data) {
+    return config.data.value;
+  }
+  return null;
 }
