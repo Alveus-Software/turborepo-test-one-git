@@ -1,11 +1,7 @@
-import { ContactForm } from "@/components/contacts/create-contact-form";
+import CreateContactPagePackage from "@repo/dashboard/contacts-parent/contacts/create/page"
 
 export default async function CreateContactPage() {
   return (
-    <>
-    <div className="bg-gray-[#04060B]">
-      <ContactForm />
-    </div>
-    </>
+    <CreateContactPagePackage/>
   );
 }
