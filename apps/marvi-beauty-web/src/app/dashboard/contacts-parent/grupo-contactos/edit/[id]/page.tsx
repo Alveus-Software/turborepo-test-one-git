@@ -1,6 +1,6 @@
 "use client";
 
-import EditContactGroupPagePackage from "@repo/dashboard/contacts-parent/grupo-contactos/editar/id/page"
+import EditContactGroupPagePackage from "@repo/dashboard/contacts-parent/grupo-contactos/edit/id/page"
 
 export default function EditContactGroupPage() {
   return (
