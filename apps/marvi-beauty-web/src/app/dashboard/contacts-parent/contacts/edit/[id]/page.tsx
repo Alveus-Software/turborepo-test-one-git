@@ -11,3 +11,4 @@ export default async function EditContactPage({ params }: EditContactPageProps) 
     <EditContactPagePackage params={params}/>
   )
 }
+ 

@@ -6,4 +6,4 @@ export default function EditContactGroupPage() {
   return (
     <EditContactGroupPagePackage/>
   )
-}
+} 
