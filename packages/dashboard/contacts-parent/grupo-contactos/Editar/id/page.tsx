@@ -24,7 +24,7 @@ export default function EditContactGroupPagePackage() {
   const [contactGroup, setContactGroup] = useState<ContactGroup | null>(null);
   const [formData, setFormData] = useState<Partial<ContactGroup>>({
     title: "",
-    description: "",
+    description: "", 
     image_url: "",
     active: true,
   });
