@@ -35,7 +35,7 @@ export default function DashboardClientLayout({
       >
         <DashboardHeader onMenuToggle={() => setSidebarOpen(!sidebarOpen)} />
        
-        <main className="lg:p-6 bg-gray-50 dark:bg-custom-bg-primary min-h-screen">
+        <main className="lg:p-6 bg-gray-50 dark:bg-custom-bg-primary  min-h-screen">
           {children}
         </main>
       </div>
