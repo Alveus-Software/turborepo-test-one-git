@@ -8,7 +8,7 @@ import { renderEmail, sendEmail } from "../actions/send-email";
 import RegistrationTemplate from "../../components/email/registration-template";
 
 type CreateAvailableAppointmentPayload = {
-  appointment_datetime: string;
+  appointment_datetime: string | string[];
   notes?: string;
 };
 
@@ -140,7 +140,7 @@ export async function createAvailableAppointment(
     return { success: false, message: "Usuario no autenticado" };
   }
 
-  const appointmentDateUTC = payload.appointment_datetime;
+  const appointmentDateUTC = Array.isArray(payload.appointment_datetime) ? payload.appointment_datetime[0]: payload.appointment_datetime;
 
   // Validación básica
   const appointmentDate = new Date(appointmentDateUTC);
