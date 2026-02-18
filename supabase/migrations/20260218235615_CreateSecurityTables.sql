@@ -1,0 +1,570 @@
+-- -- Create tables
+-- 
+-- create table "public"."modules" (
+--     "id" uuid not null default gen_random_uuid(),
+--     "created_at" timestamp with time zone not null default now(),
+--     "code" text not null,
+--     "name" text not null,
+--     "path" text not null,
+--     "description" text,
+--     "icon" text,
+--     "parent_module_id" uuid,
+--     "active" boolean not null default true,
+--     "created_by" uuid default auth.uid(),
+--     "updated_by" uuid,
+--     "updated_at" timestamp with time zone,
+--     "deleted_at" timestamp with time zone,
+--     "deleted_by" uuid,
+--     "sidebar_number" smallint
+--       );
+-- 
+-- 
+-- alter table "public"."modules" enable row level security;
+-- 
+--   create table "public"."profiles" (
+--     "id" uuid not null default gen_random_uuid(),
+--     "created_at" timestamp with time zone not null default now(),
+--     "created_by" uuid default auth.uid(),
+--     "updated_at" timestamp with time zone,
+--     "updated_by" uuid,
+--     "deleted_at" timestamp with time zone,
+--     "deleted_by" uuid,
+--     "code" text,
+--     "name" text,
+--     "active" boolean default true,
+--     "is_write_protected" boolean default false,
+--     "hierarchy" smallint
+--       );
+-- 
+-- 
+-- alter table "public"."profiles" enable row level security;
+-- 
+--   create table "public"."users" (
+--     "id" uuid not null,
+--     "full_name" text,
+--     "email" text,
+--     "active" boolean default true,
+--     "created_at" timestamp with time zone not null default timezone('utc'::text, now()),
+--     "updated_at" timestamp with time zone,
+--     "profile_id" uuid default '16a00990-a80e-44c8-8580-4faa17438609'::uuid,
+--     "avatar_url" text,
+--     "username" text,
+--     "website" text,
+--     "user_code" text
+--       );
+-- 
+-- 
+-- alter table "public"."users" enable row level security;
+-- 
+-- -- Unique index
+-- 
+-- CREATE UNIQUE INDEX modules_code_active_unique ON public.modules USING btree (code) WHERE (deleted_at IS NULL);
+-- 
+-- CREATE UNIQUE INDEX modules_path_active_unique ON public.modules USING btree (path) WHERE (deleted_at IS NULL);
+-- 
+-- CREATE UNIQUE INDEX modules_pkey ON public.modules USING btree (id);
+-- 
+-- CREATE INDEX idx_permissions_deleted_at ON public.permissions USING btree (deleted_at);
+-- 
+-- CREATE INDEX idx_permissions_module_id ON public.permissions USING btree (module_id);
+-- 
+-- CREATE INDEX idx_permissions_status ON public.permissions USING btree (active);
+-- 
+-- CREATE UNIQUE INDEX permissions_code_active_unique ON public.permissions USING btree (code) WHERE (deleted_at IS NULL);
+-- 
+-- CREATE UNIQUE INDEX permissions_pkey ON public.permissions USING btree (id);
+-- 
+-- CREATE UNIQUE INDEX permissions_profiles_pkey ON public.permissions_profiles USING btree (id);
+-- 
+-- CREATE UNIQUE INDEX profiles_code_active_unique ON public.profiles USING btree (code) WHERE (deleted_at IS NULL);
+-- 
+-- CREATE UNIQUE INDEX profiles_pkey ON public.profiles USING btree (id);
+-- 
+-- CREATE UNIQUE INDEX users_pkey ON public.users USING btree (id);
+-- 
+-- CREATE UNIQUE INDEX users_user_code_key ON public.users USING btree (user_code);
+-- 
+-- CREATE UNIQUE INDEX users_username_key ON public.users USING btree (username);
+-- 
+-- -- Primary keys
+-- 
+-- alter table "public"."modules" add constraint "modules_pkey" PRIMARY KEY using index "modules_pkey";
+-- 
+-- alter table "public"."permissions" add constraint "permissions_pkey" PRIMARY KEY using index "permissions_pkey";
+-- 
+-- alter table "public"."permissions_profiles" add constraint "permissions_profiles_pkey" PRIMARY KEY using index "permissions_profiles_pkey";
+-- 
+-- alter table "public"."profiles" add constraint "profiles_pkey" PRIMARY KEY using index "profiles_pkey";
+-- 
+-- alter table "public"."users" add constraint "users_pkey" PRIMARY KEY using index "users_pkey";
+-- 
+-- alter table "public"."users" add constraint "username_length" CHECK ((char_length(username) >= 3)) not valid;
+-- 
+-- alter table "public"."users" validate constraint "username_length";
+-- 
+-- alter table "public"."users" add constraint "users_id_fkey" FOREIGN KEY (id) REFERENCES auth.users(id) ON DELETE CASCADE not valid;
+-- 
+-- alter table "public"."users" validate constraint "users_id_fkey";
+-- 
+-- alter table "public"."users" add constraint "users_profile_id_fkey" FOREIGN KEY (profile_id) REFERENCES public.profiles(id) ON UPDATE CASCADE ON DELETE SET DEFAULT not valid;
+-- 
+-- alter table "public"."users" validate constraint "users_profile_id_fkey";
+-- 
+-- alter table "public"."users" add constraint "users_user_code_key" UNIQUE using index "users_user_code_key";
+-- 
+-- alter table "public"."users" add constraint "users_username_key" UNIQUE using index "users_username_key";
+-- 
+-- -- Foreign Keys
+-- 
+-- alter table "public"."modules" add constraint "modules_parent_section_id_fkey" FOREIGN KEY (parent_module_id) REFERENCES public.modules(id) not valid;
+-- 
+-- alter table "public"."modules" validate constraint "modules_parent_section_id_fkey";
+-- 
+-- alter table "public"."permissions" add constraint "permissions_created_by_fkey" FOREIGN KEY (created_by) REFERENCES auth.users(id) ON DELETE SET NULL not valid;
+-- 
+-- alter table "public"."permissions" validate constraint "permissions_created_by_fkey";
+-- 
+-- alter table "public"."permissions" add constraint "permissions_deleted_by_fkey" FOREIGN KEY (deleted_by) REFERENCES auth.users(id) ON DELETE SET NULL not valid;
+-- 
+-- alter table "public"."permissions" validate constraint "permissions_deleted_by_fkey";
+-- 
+-- alter table "public"."permissions" add constraint "permissions_module_id_fkey" FOREIGN KEY (module_id) REFERENCES public.modules(id) ON DELETE CASCADE not valid;
+-- 
+-- alter table "public"."permissions" validate constraint "permissions_module_id_fkey";
+-- 
+-- alter table "public"."permissions" add constraint "permissions_updated_by_fkey" FOREIGN KEY (updated_by) REFERENCES auth.users(id) ON DELETE SET NULL not valid;
+-- 
+-- alter table "public"."permissions" validate constraint "permissions_updated_by_fkey";
+-- 
+-- alter table "public"."permissions_profiles" add constraint "permissions_profiles_id_permission_fkey" FOREIGN KEY (id_permission) REFERENCES public.permissions(id) ON UPDATE CASCADE ON DELETE CASCADE not valid;
+-- 
+-- alter table "public"."permissions_profiles" validate constraint "permissions_profiles_id_permission_fkey";
+-- 
+-- alter table "public"."permissions_profiles" add constraint "permissions_profiles_id_profile_fkey" FOREIGN KEY (id_profile) REFERENCES public.profiles(id) ON UPDATE CASCADE ON DELETE CASCADE not valid;
+-- 
+-- alter table "public"."permissions_profiles" validate constraint "permissions_profiles_id_profile_fkey";
+-- 
+-- alter table "public"."profiles" add constraint "profiles_created_by_fkey" FOREIGN KEY (created_by) REFERENCES public.users(id) ON UPDATE CASCADE ON DELETE SET NULL not valid;
+-- 
+-- alter table "public"."profiles" validate constraint "profiles_created_by_fkey";
+-- 
+-- alter table "public"."profiles" add constraint "profiles_deleted_by_fkey" FOREIGN KEY (deleted_by) REFERENCES public.users(id) ON UPDATE CASCADE ON DELETE SET NULL not valid;
+-- 
+-- alter table "public"."profiles" validate constraint "profiles_deleted_by_fkey";
+-- 
+-- alter table "public"."profiles" add constraint "profiles_updated_by_fkey" FOREIGN KEY (updated_by) REFERENCES public.users(id) ON UPDATE CASCADE ON DELETE SET NULL not valid;
+-- 
+-- alter table "public"."profiles" validate constraint "profiles_updated_by_fkey";
+-- 
+-- -- Functions
+-- 
+-- CREATE OR REPLACE FUNCTION public.handle_new_user()
+--  RETURNS trigger
+--  LANGUAGE plpgsql
+--  SECURITY DEFINER
+--  SET search_path TO ''
+-- AS $function$BEGIN
+--   INSERT INTO public.users (
+--     id,
+--     full_name,
+--     email,
+--     active,
+--     created_at,
+--     updated_at,
+--     profile_id
+--   )
+--   VALUES (
+--     NEW.id,
+--     COALESCE(
+--       NEW.raw_user_meta_data->>'full_name',
+--       NEW.raw_user_meta_data->>'name',
+--       SPLIT_PART(NEW.email, '@', 1)
+--     ),
+--     NEW.email,
+--     true,
+--     NOW(),
+--     NOW(),
+--     '16a00990-a80e-44c8-8580-4faa17438609'
+--   )
+--   ON CONFLICT (id) DO UPDATE SET
+--     full_name = COALESCE(
+--       EXCLUDED.full_name,
+--       NEW.raw_user_meta_data->>'full_name',
+--       NEW.raw_user_meta_data->>'name',
+--       SPLIT_PART(NEW.email, '@', 1)
+--     ),
+--     email = EXCLUDED.email,
+--     updated_at = NOW();
+--   RETURN NEW;
+-- END;$function$
+-- ;
+-- 
+-- -- Grants
+-- 
+-- grant delete on table "public"."modules" to "anon";
+-- 
+-- grant insert on table "public"."modules" to "anon";
+-- 
+-- grant references on table "public"."modules" to "anon";
+-- 
+-- grant select on table "public"."modules" to "anon";
+-- 
+-- grant trigger on table "public"."modules" to "anon";
+-- 
+-- grant truncate on table "public"."modules" to "anon";
+-- 
+-- grant update on table "public"."modules" to "anon";
+-- 
+-- grant delete on table "public"."modules" to "authenticated";
+-- 
+-- grant insert on table "public"."modules" to "authenticated";
+-- 
+-- grant references on table "public"."modules" to "authenticated";
+-- 
+-- grant select on table "public"."modules" to "authenticated";
+-- 
+-- grant trigger on table "public"."modules" to "authenticated";
+-- 
+-- grant truncate on table "public"."modules" to "authenticated";
+-- 
+-- grant update on table "public"."modules" to "authenticated";
+-- 
+-- grant delete on table "public"."modules" to "service_role";
+-- 
+-- grant insert on table "public"."modules" to "service_role";
+-- 
+-- grant references on table "public"."modules" to "service_role";
+-- 
+-- grant select on table "public"."modules" to "service_role";
+-- 
+-- grant trigger on table "public"."modules" to "service_role";
+-- 
+-- grant truncate on table "public"."modules" to "service_role";
+-- 
+-- grant update on table "public"."modules" to "service_role";
+-- 
+-- grant delete on table "public"."permissions" to "anon";
+-- 
+-- grant insert on table "public"."permissions" to "anon";
+-- 
+-- grant references on table "public"."permissions" to "anon";
+-- 
+-- grant select on table "public"."permissions" to "anon";
+-- 
+-- grant trigger on table "public"."permissions" to "anon";
+-- 
+-- grant truncate on table "public"."permissions" to "anon";
+-- 
+-- grant update on table "public"."permissions" to "anon";
+-- 
+-- grant delete on table "public"."permissions" to "authenticated";
+-- 
+-- grant insert on table "public"."permissions" to "authenticated";
+-- 
+-- grant references on table "public"."permissions" to "authenticated";
+-- 
+-- grant select on table "public"."permissions" to "authenticated";
+-- 
+-- grant trigger on table "public"."permissions" to "authenticated";
+-- 
+-- grant truncate on table "public"."permissions" to "authenticated";
+-- 
+-- grant update on table "public"."permissions" to "authenticated";
+-- 
+-- grant delete on table "public"."permissions" to "service_role";
+-- 
+-- grant insert on table "public"."permissions" to "service_role";
+-- 
+-- grant references on table "public"."permissions" to "service_role";
+-- 
+-- grant select on table "public"."permissions" to "service_role";
+-- 
+-- grant trigger on table "public"."permissions" to "service_role";
+-- 
+-- grant truncate on table "public"."permissions" to "service_role";
+-- 
+-- grant update on table "public"."permissions" to "service_role";
+-- 
+-- grant delete on table "public"."permissions_profiles" to "anon";
+-- 
+-- grant insert on table "public"."permissions_profiles" to "anon";
+-- 
+-- grant references on table "public"."permissions_profiles" to "anon";
+-- 
+-- grant select on table "public"."permissions_profiles" to "anon";
+-- 
+-- grant trigger on table "public"."permissions_profiles" to "anon";
+-- 
+-- grant truncate on table "public"."permissions_profiles" to "anon";
+-- 
+-- grant update on table "public"."permissions_profiles" to "anon";
+-- 
+-- grant delete on table "public"."permissions_profiles" to "authenticated";
+-- 
+-- grant insert on table "public"."permissions_profiles" to "authenticated";
+-- 
+-- grant references on table "public"."permissions_profiles" to "authenticated";
+-- 
+-- grant select on table "public"."permissions_profiles" to "authenticated";
+-- 
+-- grant trigger on table "public"."permissions_profiles" to "authenticated";
+-- 
+-- grant truncate on table "public"."permissions_profiles" to "authenticated";
+-- 
+-- grant update on table "public"."permissions_profiles" to "authenticated";
+-- 
+-- grant delete on table "public"."permissions_profiles" to "service_role";
+-- 
+-- grant insert on table "public"."permissions_profiles" to "service_role";
+-- 
+-- grant references on table "public"."permissions_profiles" to "service_role";
+-- 
+-- grant select on table "public"."permissions_profiles" to "service_role";
+-- 
+-- grant trigger on table "public"."permissions_profiles" to "service_role";
+-- 
+-- grant truncate on table "public"."permissions_profiles" to "service_role";
+-- 
+-- grant update on table "public"."permissions_profiles" to "service_role";
+-- 
+-- grant delete on table "public"."profiles" to "anon";
+-- 
+-- grant insert on table "public"."profiles" to "anon";
+-- 
+-- grant references on table "public"."profiles" to "anon";
+-- 
+-- grant select on table "public"."profiles" to "anon";
+-- 
+-- grant trigger on table "public"."profiles" to "anon";
+-- 
+-- grant truncate on table "public"."profiles" to "anon";
+-- 
+-- grant update on table "public"."profiles" to "anon";
+-- 
+-- grant delete on table "public"."profiles" to "authenticated";
+-- 
+-- grant insert on table "public"."profiles" to "authenticated";
+-- 
+-- grant references on table "public"."profiles" to "authenticated";
+-- 
+-- grant select on table "public"."profiles" to "authenticated";
+-- 
+-- grant trigger on table "public"."profiles" to "authenticated";
+-- 
+-- grant truncate on table "public"."profiles" to "authenticated";
+-- 
+-- grant update on table "public"."profiles" to "authenticated";
+-- 
+-- grant delete on table "public"."profiles" to "service_role";
+-- 
+-- grant insert on table "public"."profiles" to "service_role";
+-- 
+-- grant references on table "public"."profiles" to "service_role";
+-- 
+-- grant select on table "public"."profiles" to "service_role";
+-- 
+-- grant trigger on table "public"."profiles" to "service_role";
+-- 
+-- grant truncate on table "public"."profiles" to "service_role";
+-- 
+-- grant update on table "public"."profiles" to "service_role";
+-- 
+-- grant delete on table "public"."users" to "anon";
+-- 
+-- grant insert on table "public"."users" to "anon";
+-- 
+-- grant references on table "public"."users" to "anon";
+-- 
+-- grant select on table "public"."users" to "anon";
+-- 
+-- grant trigger on table "public"."users" to "anon";
+-- 
+-- grant truncate on table "public"."users" to "anon";
+-- 
+-- grant update on table "public"."users" to "anon";
+-- 
+-- grant delete on table "public"."users" to "authenticated";
+-- 
+-- grant insert on table "public"."users" to "authenticated";
+-- 
+-- grant references on table "public"."users" to "authenticated";
+-- 
+-- grant select on table "public"."users" to "authenticated";
+-- 
+-- grant trigger on table "public"."users" to "authenticated";
+-- 
+-- grant truncate on table "public"."users" to "authenticated";
+-- 
+-- grant update on table "public"."users" to "authenticated";
+-- 
+-- grant delete on table "public"."users" to "service_role";
+-- 
+-- grant insert on table "public"."users" to "service_role";
+-- 
+-- grant references on table "public"."users" to "service_role";
+-- 
+-- grant select on table "public"."users" to "service_role";
+-- 
+-- grant trigger on table "public"."users" to "service_role";
+-- 
+-- grant truncate on table "public"."users" to "service_role";
+-- 
+-- grant update on table "public"."users" to "service_role";
+-- 
+-- -- Policies
+-- 
+--   create policy "Allow authenticated users to create modules"
+--   on "public"."modules"
+--   as permissive
+--   for insert
+--   to authenticated
+-- with check (true);
+-- 
+-- 
+-- 
+--   create policy "Allow authenticated users to delete modules"
+--   on "public"."modules"
+--   as permissive
+--   for delete
+--   to authenticated
+-- using (true);
+-- 
+-- 
+-- 
+--   create policy "Allow authenticated users to read modules"
+--   on "public"."modules"
+--   as permissive
+--   for select
+--   to authenticated
+-- using (true);
+-- 
+-- 
+-- 
+--   create policy "Allow authenticated users to update modules"
+--   on "public"."modules"
+--   as permissive
+--   for update
+--   to authenticated
+-- using (true);
+-- 
+--   create policy "Usuarios autenticados pueden actualizar permisos"
+--   on "public"."permissions"
+--   as permissive
+--   for update
+--   to authenticated
+-- using (true)
+-- with check (true);
+-- 
+-- 
+-- 
+--   create policy "Usuarios autenticados pueden crear permisos"
+--   on "public"."permissions"
+--   as permissive
+--   for insert
+--   to authenticated
+-- with check (true);
+-- 
+-- 
+-- 
+--   create policy "Usuarios autenticados pueden eliminar permisos"
+--   on "public"."permissions"
+--   as permissive
+--   for delete
+--   to authenticated
+-- using (true);
+-- 
+-- 
+-- 
+--   create policy "Usuarios autenticados pueden leer permisos"
+--   on "public"."permissions"
+--   as permissive
+--   for select
+--   to authenticated
+-- using (true);
+-- 
+-- 
+-- 
+--   create policy "Enable insert for authenticated users only"
+--   on "public"."permissions_profiles"
+--   as permissive
+--   for insert
+--   to authenticated
+-- with check (true);
+-- 
+-- 
+-- 
+--   create policy "Enable read access for all users"
+--   on "public"."permissions_profiles"
+--   as permissive
+--   for select
+--   to authenticated
+-- using (true);
+-- 
+-- 
+-- 
+--   create policy "Policy with table joins"
+--   on "public"."permissions_profiles"
+--   as permissive
+--   for update
+--   to authenticated
+-- using (true);
+-- 
+--   create policy "Enable insert for authenticated users only"
+--   on "public"."profiles"
+--   as permissive
+--   for insert
+--   to authenticated
+-- with check (true);
+-- 
+-- 
+-- 
+--   create policy "Enable read access for authenticated users"
+--   on "public"."profiles"
+--   as permissive
+--   for select
+--   to authenticated
+-- using (true);
+-- 
+-- 
+-- 
+--   create policy "Update profile authenticated users"
+--   on "public"."profiles"
+--   as permissive
+--   for update
+--   to authenticated
+-- using ((is_write_protected = false));
+-- 
+--   create policy "Public users are viewable by everyone."
+--   on "public"."users"
+--   as permissive
+--   for select
+--   to authenticated
+-- using (true);
+-- 
+-- 
+-- 
+--   create policy "Users can insert their own user."
+--   on "public"."users"
+--   as permissive
+--   for insert
+--   to public
+-- with check ((( SELECT auth.uid() AS uid) = id));
+-- 
+-- 
+-- 
+--   create policy "Users can update own user."
+--   on "public"."users"
+--   as permissive
+--   for update
+--   to public
+-- using (((( SELECT auth.uid() AS uid) = id) OR (( SELECT (users_1.profile_id)::text AS profile_id
+--    FROM public.users users_1
+--   WHERE (users_1.id = ( SELECT auth.uid() AS uid))) = '81d06bec-2dda-42d5-a22b-6a5169b0e31b'::text)));
+-- 
+-- -- Triggers
+-- 
+-- CREATE TRIGGER trigger_update_child_paths BEFORE UPDATE ON public.modules FOR EACH ROW EXECUTE FUNCTION public.update_child_paths();
+-- 
+-- CREATE TRIGGER trigger_update_permissions_code AFTER UPDATE OF code ON public.modules FOR EACH ROW WHEN ((old.code IS DISTINCT FROM new.code)) EXECUTE FUNCTION public.update_permissions_code_on_module_change();
+-- 
+-- CREATE TRIGGER trigger_create_contact_after_signup AFTER INSERT ON public.users FOR EACH ROW EXECUTE FUNCTION public.create_contact_after_signup();
