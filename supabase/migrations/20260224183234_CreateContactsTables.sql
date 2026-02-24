@@ -1,0 +1,326 @@
+-- -- Create tables
+-- 
+--   create table "public"."contact_groups" (
+--     "id" uuid not null default gen_random_uuid(),
+--     "created_at" timestamp with time zone not null default now(),
+--     "created_by" uuid default auth.uid(),
+--     "updated_at" timestamp with time zone,
+--     "updated_by" uuid,
+--     "deleted_at" timestamp with time zone,
+--     "deleted_by" uuid,
+--     "title" text not null,
+--     "description" text,
+--     "active" boolean not null default true,
+--     "image_url" text
+--       );
+-- 
+-- 
+-- alter table "public"."contact_groups" enable row level security;
+-- 
+-- 
+--   create table "public"."contacts" (
+--     "id" uuid not null default gen_random_uuid(),
+--     "full_name" text,
+--     "job_position" text,
+--     "phone" text,
+--     "mobile" text,
+--     "email" text,
+--     "website" text,
+--     "title" text,
+--     "rfc" text,
+--     "curp" text,
+--     "related_user_id" uuid default gen_random_uuid(),
+--     "created_at" timestamp with time zone not null default now(),
+--     "created_by" uuid,
+--     "updated_at" timestamp with time zone,
+--     "updated_by" uuid,
+--     "deleted_at" timestamp with time zone,
+--     "deleted_by" uuid,
+--     "birth_date" date,
+--     "notes" text
+--       );
+-- 
+-- 
+-- alter table "public"."contacts" enable row level security;
+-- 
+-- 
+--   create table "public"."group_contacts" (
+--     "id" uuid not null default gen_random_uuid(),
+--     "created_at" timestamp with time zone not null default now(),
+--     "created_by" uuid not null default auth.uid(),
+--     "updated_at" timestamp with time zone,
+--     "updated_by" uuid,
+--     "deleted_at" timestamp with time zone,
+--     "deleted_by" uuid,
+--     "id_contacts" uuid,
+--     "id_contact_groups" uuid,
+--     "active" boolean not null
+--       );
+-- 
+-- 
+-- alter table "public"."group_contacts" enable row level security;
+-- 
+-- -- Unique index
+-- 
+-- CREATE UNIQUE INDEX contact_groups_pkey ON public.contact_groups USING btree (id);
+-- 
+-- CREATE UNIQUE INDEX contacts_pkey ON public.contacts USING btree (id);
+-- 
+-- CREATE UNIQUE INDEX group_contacts_pkey ON public.group_contacts USING btree (id);
+-- 
+-- CREATE UNIQUE INDEX group_contacts_unique_contact_group ON public.group_contacts USING btree (id_contacts, id_contact_groups);
+-- 
+-- -- Primary keys
+-- 
+-- alter table "public"."contact_groups" add constraint "contact_groups_pkey" PRIMARY KEY using index "contact_groups_pkey";
+-- 
+-- alter table "public"."contacts" add constraint "contacts_pkey" PRIMARY KEY using index "contacts_pkey";
+-- 
+-- alter table "public"."group_contacts" add constraint "group_contacts_pkey" PRIMARY KEY using index "group_contacts_pkey";
+-- 
+-- -- Foreign Keys
+-- 
+-- alter table "public"."contacts" add constraint "contacts_related_user_id_fkey" FOREIGN KEY (related_user_id) REFERENCES public.users(id) not valid;
+-- 
+-- alter table "public"."contacts" validate constraint "contacts_related_user_id_fkey";
+-- 
+-- alter table "public"."group_contacts" add constraint "group_contacts_created_by_fkey" FOREIGN KEY (created_by) REFERENCES public.users(id) not valid;
+-- 
+-- alter table "public"."group_contacts" validate constraint "group_contacts_created_by_fkey";
+-- 
+-- alter table "public"."group_contacts" add constraint "group_contacts_deleted_by_fkey" FOREIGN KEY (deleted_by) REFERENCES public.users(id) not valid;
+-- 
+-- alter table "public"."group_contacts" validate constraint "group_contacts_deleted_by_fkey";
+-- 
+-- alter table "public"."group_contacts" add constraint "group_contacts_id_contact_groups_fkey" FOREIGN KEY (id_contact_groups) REFERENCES public.contact_groups(id) not valid;
+-- 
+-- alter table "public"."group_contacts" validate constraint "group_contacts_id_contact_groups_fkey";
+-- 
+-- alter table "public"."group_contacts" add constraint "group_contacts_id_contacts_fkey" FOREIGN KEY (id_contacts) REFERENCES public.contacts(id) not valid;
+-- 
+-- alter table "public"."group_contacts" validate constraint "group_contacts_id_contacts_fkey";
+-- 
+-- alter table "public"."group_contacts" add constraint "group_contacts_unique_contact_group" UNIQUE using index "group_contacts_unique_contact_group";
+-- 
+-- alter table "public"."group_contacts" add constraint "group_contacts_updated_by_fkey" FOREIGN KEY (updated_by) REFERENCES public.users(id) not valid;
+-- 
+-- alter table "public"."group_contacts" validate constraint "group_contacts_updated_by_fkey";
+-- 
+-- -- Grants
+-- 
+-- grant delete on table "public"."contact_groups" to "anon";
+-- 
+-- grant insert on table "public"."contact_groups" to "anon";
+-- 
+-- grant references on table "public"."contact_groups" to "anon";
+-- 
+-- grant select on table "public"."contact_groups" to "anon";
+-- 
+-- grant trigger on table "public"."contact_groups" to "anon";
+-- 
+-- grant truncate on table "public"."contact_groups" to "anon";
+-- 
+-- grant update on table "public"."contact_groups" to "anon";
+-- 
+-- grant delete on table "public"."contact_groups" to "authenticated";
+-- 
+-- grant insert on table "public"."contact_groups" to "authenticated";
+-- 
+-- grant references on table "public"."contact_groups" to "authenticated";
+-- 
+-- grant select on table "public"."contact_groups" to "authenticated";
+-- 
+-- grant trigger on table "public"."contact_groups" to "authenticated";
+-- 
+-- grant truncate on table "public"."contact_groups" to "authenticated";
+-- 
+-- grant update on table "public"."contact_groups" to "authenticated";
+-- 
+-- grant delete on table "public"."contact_groups" to "service_role";
+-- 
+-- grant insert on table "public"."contact_groups" to "service_role";
+-- 
+-- grant references on table "public"."contact_groups" to "service_role";
+-- 
+-- grant select on table "public"."contact_groups" to "service_role";
+-- 
+-- grant trigger on table "public"."contact_groups" to "service_role";
+-- 
+-- grant truncate on table "public"."contact_groups" to "service_role";
+-- 
+-- grant update on table "public"."contact_groups" to "service_role";
+-- 
+-- grant delete on table "public"."contacts" to "anon";
+-- 
+-- grant insert on table "public"."contacts" to "anon";
+-- 
+-- grant references on table "public"."contacts" to "anon";
+-- 
+-- grant select on table "public"."contacts" to "anon";
+-- 
+-- grant trigger on table "public"."contacts" to "anon";
+-- 
+-- grant truncate on table "public"."contacts" to "anon";
+-- 
+-- grant update on table "public"."contacts" to "anon";
+-- 
+-- grant delete on table "public"."contacts" to "authenticated";
+-- 
+-- grant insert on table "public"."contacts" to "authenticated";
+-- 
+-- grant references on table "public"."contacts" to "authenticated";
+-- 
+-- grant select on table "public"."contacts" to "authenticated";
+-- 
+-- grant trigger on table "public"."contacts" to "authenticated";
+-- 
+-- grant truncate on table "public"."contacts" to "authenticated";
+-- 
+-- grant update on table "public"."contacts" to "authenticated";
+-- 
+-- grant delete on table "public"."contacts" to "service_role";
+-- 
+-- grant insert on table "public"."contacts" to "service_role";
+-- 
+-- grant references on table "public"."contacts" to "service_role";
+-- 
+-- grant select on table "public"."contacts" to "service_role";
+-- 
+-- grant trigger on table "public"."contacts" to "service_role";
+-- 
+-- grant truncate on table "public"."contacts" to "service_role";
+-- 
+-- grant update on table "public"."contacts" to "service_role";
+-- 
+-- grant delete on table "public"."group_contacts" to "anon";
+-- 
+-- grant insert on table "public"."group_contacts" to "anon";
+-- 
+-- grant references on table "public"."group_contacts" to "anon";
+-- 
+-- grant select on table "public"."group_contacts" to "anon";
+-- 
+-- grant trigger on table "public"."group_contacts" to "anon";
+-- 
+-- grant truncate on table "public"."group_contacts" to "anon";
+-- 
+-- grant update on table "public"."group_contacts" to "anon";
+-- 
+-- grant delete on table "public"."group_contacts" to "authenticated";
+-- 
+-- grant insert on table "public"."group_contacts" to "authenticated";
+-- 
+-- grant references on table "public"."group_contacts" to "authenticated";
+-- 
+-- grant select on table "public"."group_contacts" to "authenticated";
+-- 
+-- grant trigger on table "public"."group_contacts" to "authenticated";
+-- 
+-- grant truncate on table "public"."group_contacts" to "authenticated";
+-- 
+-- grant update on table "public"."group_contacts" to "authenticated";
+-- 
+-- grant delete on table "public"."group_contacts" to "service_role";
+-- 
+-- grant insert on table "public"."group_contacts" to "service_role";
+-- 
+-- grant references on table "public"."group_contacts" to "service_role";
+-- 
+-- grant select on table "public"."group_contacts" to "service_role";
+-- 
+-- grant trigger on table "public"."group_contacts" to "service_role";
+-- 
+-- grant truncate on table "public"."group_contacts" to "service_role";
+-- 
+-- grant update on table "public"."group_contacts" to "service_role";
+-- 
+-- -- Policies
+-- 
+--   create policy "Enable insert for authenticated users only"
+--   on "public"."contact_groups"
+--   as permissive
+--   for insert
+--   to authenticated
+-- with check (true);
+-- 
+-- 
+-- 
+--   create policy "Enable read access for all users"
+--   on "public"."contact_groups"
+--   as permissive
+--   for select
+--   to authenticated
+-- using (true);
+-- 
+-- 
+-- 
+--   create policy "Policy with table joins"
+--   on "public"."contact_groups"
+--   as permissive
+--   for update
+--   to authenticated
+-- using (true);
+-- 
+-- 
+-- 
+--   create policy "Enable insert for authenticated users only"
+--   on "public"."contacts"
+--   as permissive
+--   for insert
+--   to authenticated, anon
+-- with check (true);
+-- 
+-- 
+-- 
+--   create policy "Enable read access for all users"
+--   on "public"."contacts"
+--   as permissive
+--   for select
+--   to anon, authenticated
+-- using (true);
+-- 
+-- 
+-- 
+--   create policy "Policy with table joins"
+--   on "public"."contacts"
+--   as permissive
+--   for update
+--   to public
+-- using (true)
+-- with check (true);
+-- 
+-- 
+-- 
+--   create policy "Enable delete for users based on user_id"
+--   on "public"."group_contacts"
+--   as permissive
+--   for delete
+--   to authenticated
+-- using (true);
+-- 
+-- 
+-- 
+--   create policy "Enable insert for authenticated users only"
+--   on "public"."group_contacts"
+--   as permissive
+--   for insert
+--   to authenticated
+-- with check (true);
+-- 
+-- 
+-- 
+--   create policy "Enable read access for all users"
+--   on "public"."group_contacts"
+--   as permissive
+--   for select
+--   to authenticated
+-- using (true);
+-- 
+-- 
+-- 
+--   create policy "Policy with table joins"
+--   on "public"."group_contacts"
+--   as permissive
+--   for update
+--   to authenticated
+-- using (true);
