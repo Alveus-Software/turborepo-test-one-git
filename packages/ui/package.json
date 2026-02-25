@@ -11,6 +11,17 @@
     "check-types": "tsc --noEmit"
   },
   "devDependencies": {
+    "@repo/about_us": "*",
+    "@repo/api": "*",
+    "@repo/appointments": "*",
+    "@repo/auth": "*",
+    "@repo/checador": "*",
+    "@repo/cliente-cita": "*",
+    "@repo/components": "*",
+    "@repo/dashboard": "*",
+    "@repo/lib": "*",
+    "@repo/ui": "*",
+    "@repo/providers":"*",
     "@repo/eslint-config": "*",
     "@repo/typescript-config": "*",
     "@types/node": "^22.15.3",
@@ -20,6 +31,17 @@
     "typescript": "5.9.2"
   },
   "dependencies": {
+    "@repo/about_us": "*",
+    "@repo/api": "*",
+    "@repo/appointments": "*",
+    "@repo/auth": "*",
+    "@repo/checador": "*",
+    "@repo/cliente-cita": "*",
+    "@repo/components": "*",
+    "@repo/dashboard": "*",
+    "@repo/lib": "*",
+    "@repo/ui": "*",
+    "@repo/providers":"*",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   }

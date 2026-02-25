@@ -1,5 +1,5 @@
 {
-  "name": "@repo/components",
+  "name": "@repo/profile",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -15,10 +15,10 @@
     "@repo/auth": "*",
     "@repo/checador": "*",
     "@repo/cliente-cita": "*",
+    "@repo/components": "*",
     "@repo/dashboard": "*",
     "@repo/eslint-config": "*",
     "@repo/lib": "*",
-    "@repo/profile": "*",
     "@repo/typescript-config": "*",
     "@repo/ui": "*",
     "@repo/providers":"*"
@@ -30,10 +30,10 @@
     "@repo/auth": "*",
     "@repo/checador": "*",
     "@repo/cliente-cita": "*",
+    "@repo/components": "*",
     "@repo/dashboard": "*",
     "@repo/eslint-config": "*",
     "@repo/lib": "*",
-    "@repo/profile": "*",
     "@repo/typescript-config": "*",
     "@repo/ui": "*",
     "@repo/providers":"*"

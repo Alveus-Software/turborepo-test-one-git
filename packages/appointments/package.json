@@ -1,5 +1,5 @@
 {
-  "name": "@repo/components",
+  "name": "@repo/appointments",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -11,10 +11,10 @@
   "dependencies": {
     "@repo/about_us": "*",
     "@repo/api": "*",
-    "@repo/appointments": "*",
     "@repo/auth": "*",
     "@repo/checador": "*",
     "@repo/cliente-cita": "*",
+    "@repo/components": "*",
     "@repo/dashboard": "*",
     "@repo/eslint-config": "*",
     "@repo/lib": "*",
@@ -26,10 +26,10 @@
   "devDependencies": {
     "@repo/about_us": "*",
     "@repo/api": "*",
-    "@repo/appointments": "*",
     "@repo/auth": "*",
     "@repo/checador": "*",
     "@repo/cliente-cita": "*",
+    "@repo/components": "*",
     "@repo/dashboard": "*",
     "@repo/eslint-config": "*",
     "@repo/lib": "*",

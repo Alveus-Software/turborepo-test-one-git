@@ -1,5 +1,5 @@
 {
-  "name": "@repo/components",
+  "name": "@repo/about_us",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -9,12 +9,12 @@
     "lint": "echo 'Add lint script here'"
   },
   "dependencies": {
-    "@repo/about_us": "*",
     "@repo/api": "*",
     "@repo/appointments": "*",
     "@repo/auth": "*",
     "@repo/checador": "*",
     "@repo/cliente-cita": "*",
+    "@repo/components": "*",
     "@repo/dashboard": "*",
     "@repo/eslint-config": "*",
     "@repo/lib": "*",
@@ -24,12 +24,12 @@
     "@repo/providers":"*"
   },
   "devDependencies": {
-    "@repo/about_us": "*",
     "@repo/api": "*",
     "@repo/appointments": "*",
     "@repo/auth": "*",
     "@repo/checador": "*",
     "@repo/cliente-cita": "*",
+    "@repo/components": "*",
     "@repo/dashboard": "*",
     "@repo/eslint-config": "*",
     "@repo/lib": "*",

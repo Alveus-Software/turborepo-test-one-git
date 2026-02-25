@@ -1,5 +1,5 @@
 {
-  "name": "@repo/components",
+  "name": "@repo/checador",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -13,8 +13,7 @@
     "@repo/api": "*",
     "@repo/appointments": "*",
     "@repo/auth": "*",
-    "@repo/checador": "*",
-    "@repo/cliente-cita": "*",
+    "@repo/components": "*",
     "@repo/dashboard": "*",
     "@repo/eslint-config": "*",
     "@repo/lib": "*",
@@ -28,8 +27,7 @@
     "@repo/api": "*",
     "@repo/appointments": "*",
     "@repo/auth": "*",
-    "@repo/checador": "*",
-    "@repo/cliente-cita": "*",
+    "@repo/components": "*",
     "@repo/dashboard": "*",
     "@repo/eslint-config": "*",
     "@repo/lib": "*",
