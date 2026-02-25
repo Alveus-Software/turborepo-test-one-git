@@ -1,0 +1,412 @@
+-- -- créate tables and types
+-- 
+-- create type "public"."appointment_statuses" as enum ('confirmed', 'completed', 'canceled');
+-- 
+--   create table "public"."appointment_status" (
+--     "id" uuid not null default gen_random_uuid(),
+--     "created_at" timestamp with time zone not null default now(),
+--     "created_by" uuid default auth.uid(),
+--     "updated_at" timestamp with time zone,
+--     "updated_by" uuid,
+--     "deleted_at" timestamp with time zone,
+--     "deleted_by" uuid,
+--     "name" text not null,
+--     "description" text
+--       );
+-- 
+-- 
+-- alter table "public"."appointment_status" enable row level security;
+-- 
+-- 
+--   create table "public"."appointments" (
+--     "id" uuid not null default gen_random_uuid(),
+--     "client_name" text,
+--     "client_email" text,
+--     "created_by" uuid default auth.uid(),
+--     "created_at" timestamp with time zone not null default now(),
+--     "updated_by" uuid,
+--     "updated_at" timestamp with time zone,
+--     "deleted_by" uuid,
+--     "deleted_at" timestamp with time zone,
+--     "client_phone" text,
+--     "appointment_datetime" timestamp with time zone,
+--     "booked_at" timestamp with time zone,
+--     "booked_by_user_id" uuid,
+--     "cancelled_at" timestamp with time zone,
+--     "client_notes" text,
+--     "notes" text,
+--     "space_owner_user_id" uuid default auth.uid(),
+--     "status_id" uuid default '517e3cc0-0763-4fd0-9195-756fe4617706'::uuid
+--       );
+-- 
+--   create table "public"."companies" (
+--     "id" uuid not null default gen_random_uuid(),
+--     "name" text,
+--     "street" text,
+--     "colony" text,
+--     "city" text,
+--     "state" text,
+--     "zip_code" text,
+--     "address_number" text,
+--     "phone" text,
+--     "cellphone" text,
+--     "website" text,
+--     "rfc" text,
+--     "parent_company" uuid,
+--     "created_at" timestamp with time zone not null default now(),
+--     "created_by" uuid,
+--     "updated_at" timestamp with time zone,
+--     "updated_by" uuid,
+--     "deleted_at" timestamp with time zone,
+--     "deleted_by" uuid
+--       );
+-- 
+-- 
+-- alter table "public"."companies" enable row level security;
+-- 
+-- 
+-- alter table "public"."appointments" enable row level security;
+-- 
+--   create table "public"."configurations" (
+--     "id" uuid not null default gen_random_uuid(),
+--     "created_at" timestamp without time zone,
+--     "created_by" uuid,
+--     "updated_at" timestamp without time zone,
+--     "updated_by" uuid,
+--     "active" boolean default true,
+--     "company_id" uuid,
+--     "key" text,
+--     "value" text
+--       );
+-- 
+-- 
+-- alter table "public"."configurations" enable row level security;
+-- 
+-- -- unique index
+-- 
+-- CREATE UNIQUE INDEX appointment_datetime_owner_active_unique ON public.appointments USING btree (appointment_datetime, space_owner_user_id) WHERE (deleted_at IS NULL);
+-- 
+-- CREATE UNIQUE INDEX appointment_status_pkey ON public.appointment_status USING btree (id);
+-- 
+-- CREATE UNIQUE INDEX appointments_pkey ON public.appointments USING btree (id);
+-- 
+-- CREATE UNIQUE INDEX companies_pkey ON public.companies USING btree (id);
+-- 
+-- CREATE UNIQUE INDEX configurations_pkey ON public.configurations USING btree (id);
+-- 
+-- -- Primary keys
+-- 
+-- alter table "public"."appointment_status" add constraint "appointment_status_pkey" PRIMARY KEY using index "appointment_status_pkey";
+-- 
+-- alter table "public"."appointments" add constraint "appointments_pkey" PRIMARY KEY using index "appointments_pkey";
+-- 
+-- alter table "public"."companies" add constraint "companies_pkey" PRIMARY KEY using index "companies_pkey";
+-- 
+-- alter table "public"."configurations" add constraint "configurations_pkey" PRIMARY KEY using index "configurations_pkey";
+-- 
+-- -- Foreign keys
+-- 
+-- alter table "public"."appointments" add constraint "appointments_booked_by_user_id_fkey" FOREIGN KEY (booked_by_user_id) REFERENCES public.users(id) ON UPDATE CASCADE ON DELETE SET DEFAULT not valid;
+-- 
+-- alter table "public"."appointments" validate constraint "appointments_booked_by_user_id_fkey";
+-- 
+-- alter table "public"."appointments" add constraint "appointments_space_owner_user_id_fkey" FOREIGN KEY (space_owner_user_id) REFERENCES public.users(id) ON UPDATE RESTRICT ON DELETE SET DEFAULT not valid;
+-- 
+-- alter table "public"."appointments" validate constraint "appointments_space_owner_user_id_fkey";
+-- 
+-- alter table "public"."appointments" add constraint "appointments_status_id_fkey" FOREIGN KEY (status_id) REFERENCES public.appointment_status(id) ON UPDATE CASCADE ON DELETE RESTRICT not valid;
+-- 
+-- alter table "public"."appointments" validate constraint "appointments_status_id_fkey";
+-- 
+-- alter table "public"."companies" add constraint "companies_parent_company_fkey" FOREIGN KEY (parent_company) REFERENCES public.companies(id) ON UPDATE CASCADE ON DELETE SET NULL not valid;
+-- 
+-- alter table "public"."companies" validate constraint "companies_parent_company_fkey";
+-- 
+-- alter table "public"."configurations" add constraint "configurations_company_id_fkey" FOREIGN KEY (company_id) REFERENCES public.companies(id) ON UPDATE CASCADE ON DELETE SET DEFAULT not valid;
+-- 
+-- alter table "public"."configurations" validate constraint "configurations_company_id_fkey";
+-- 
+-- -- grants
+-- 
+-- grant delete on table "public"."appointment_status" to "anon";
+-- 
+-- grant insert on table "public"."appointment_status" to "anon";
+-- 
+-- grant references on table "public"."appointment_status" to "anon";
+-- 
+-- grant select on table "public"."appointment_status" to "anon";
+-- 
+-- grant trigger on table "public"."appointment_status" to "anon";
+-- 
+-- grant truncate on table "public"."appointment_status" to "anon";
+-- 
+-- grant update on table "public"."appointment_status" to "anon";
+-- 
+-- grant delete on table "public"."appointment_status" to "authenticated";
+-- 
+-- grant insert on table "public"."appointment_status" to "authenticated";
+-- 
+-- grant references on table "public"."appointment_status" to "authenticated";
+-- 
+-- grant select on table "public"."appointment_status" to "authenticated";
+-- 
+-- grant trigger on table "public"."appointment_status" to "authenticated";
+-- 
+-- grant truncate on table "public"."appointment_status" to "authenticated";
+-- 
+-- grant update on table "public"."appointment_status" to "authenticated";
+-- 
+-- grant delete on table "public"."appointment_status" to "service_role";
+-- 
+-- grant insert on table "public"."appointment_status" to "service_role";
+-- 
+-- grant references on table "public"."appointment_status" to "service_role";
+-- 
+-- grant select on table "public"."appointment_status" to "service_role";
+-- 
+-- grant trigger on table "public"."appointment_status" to "service_role";
+-- 
+-- grant truncate on table "public"."appointment_status" to "service_role";
+-- 
+-- grant update on table "public"."appointment_status" to "service_role";
+-- 
+-- grant delete on table "public"."appointments" to "anon";
+-- 
+-- grant insert on table "public"."appointments" to "anon";
+-- 
+-- grant references on table "public"."appointments" to "anon";
+-- 
+-- grant select on table "public"."appointments" to "anon";
+-- 
+-- grant trigger on table "public"."appointments" to "anon";
+-- 
+-- grant truncate on table "public"."appointments" to "anon";
+-- 
+-- grant update on table "public"."appointments" to "anon";
+-- 
+-- grant delete on table "public"."appointments" to "authenticated";
+-- 
+-- grant insert on table "public"."appointments" to "authenticated";
+-- 
+-- grant references on table "public"."appointments" to "authenticated";
+-- 
+-- grant select on table "public"."appointments" to "authenticated";
+-- 
+-- grant trigger on table "public"."appointments" to "authenticated";
+-- 
+-- grant truncate on table "public"."appointments" to "authenticated";
+-- 
+-- grant update on table "public"."appointments" to "authenticated";
+-- 
+-- grant delete on table "public"."appointments" to "service_role";
+-- 
+-- grant insert on table "public"."appointments" to "service_role";
+-- 
+-- grant references on table "public"."appointments" to "service_role";
+-- 
+-- grant select on table "public"."appointments" to "service_role";
+-- 
+-- grant trigger on table "public"."appointments" to "service_role";
+-- 
+-- grant truncate on table "public"."appointments" to "service_role";
+-- 
+-- grant update on table "public"."appointments" to "service_role";
+-- 
+-- grant delete on table "public"."companies" to "anon";
+-- 
+-- grant insert on table "public"."companies" to "anon";
+-- 
+-- grant references on table "public"."companies" to "anon";
+-- 
+-- grant select on table "public"."companies" to "anon";
+-- 
+-- grant trigger on table "public"."companies" to "anon";
+-- 
+-- grant truncate on table "public"."companies" to "anon";
+-- 
+-- grant update on table "public"."companies" to "anon";
+-- 
+-- grant delete on table "public"."companies" to "authenticated";
+-- 
+-- grant insert on table "public"."companies" to "authenticated";
+-- 
+-- grant references on table "public"."companies" to "authenticated";
+-- 
+-- grant select on table "public"."companies" to "authenticated";
+-- 
+-- grant trigger on table "public"."companies" to "authenticated";
+-- 
+-- grant truncate on table "public"."companies" to "authenticated";
+-- 
+-- grant update on table "public"."companies" to "authenticated";
+-- 
+-- grant delete on table "public"."companies" to "service_role";
+-- 
+-- grant insert on table "public"."companies" to "service_role";
+-- 
+-- grant references on table "public"."companies" to "service_role";
+-- 
+-- grant select on table "public"."companies" to "service_role";
+-- 
+-- grant trigger on table "public"."companies" to "service_role";
+-- 
+-- grant truncate on table "public"."companies" to "service_role";
+-- 
+-- grant update on table "public"."companies" to "service_role";
+-- 
+-- grant delete on table "public"."configurations" to "anon";
+-- 
+-- grant insert on table "public"."configurations" to "anon";
+-- 
+-- grant references on table "public"."configurations" to "anon";
+-- 
+-- grant select on table "public"."configurations" to "anon";
+-- 
+-- grant trigger on table "public"."configurations" to "anon";
+-- 
+-- grant truncate on table "public"."configurations" to "anon";
+-- 
+-- grant update on table "public"."configurations" to "anon";
+-- 
+-- grant delete on table "public"."configurations" to "authenticated";
+-- 
+-- grant insert on table "public"."configurations" to "authenticated";
+-- 
+-- grant references on table "public"."configurations" to "authenticated";
+-- 
+-- grant select on table "public"."configurations" to "authenticated";
+-- 
+-- grant trigger on table "public"."configurations" to "authenticated";
+-- 
+-- grant truncate on table "public"."configurations" to "authenticated";
+-- 
+-- grant update on table "public"."configurations" to "authenticated";
+-- 
+-- grant delete on table "public"."configurations" to "service_role";
+-- 
+-- grant insert on table "public"."configurations" to "service_role";
+-- 
+-- grant references on table "public"."configurations" to "service_role";
+-- 
+-- grant select on table "public"."configurations" to "service_role";
+-- 
+-- grant trigger on table "public"."configurations" to "service_role";
+-- 
+-- grant truncate on table "public"."configurations" to "service_role";
+-- 
+-- grant update on table "public"."configurations" to "service_role";
+-- 
+-- -- Policies
+-- 
+--   create policy "Enable read access for all users"
+--   on "public"."appointment_status"
+--   as permissive
+--   for select
+--   to authenticated
+-- using (true);
+-- 
+-- 
+-- 
+--   create policy "Enable delete for users based on user_id"
+--   on "public"."appointments"
+--   as permissive
+--   for delete
+--   to authenticated
+-- using ((status_id = ( SELECT appointment_status.id
+--    FROM public.appointment_status
+--   WHERE (appointment_status.name = 'available'::text)
+--  LIMIT 1)));
+-- 
+-- 
+-- 
+--   create policy "Enable insert for authenticated users only"
+--   on "public"."appointments"
+--   as permissive
+--   for insert
+--   to authenticated
+-- with check (true);
+-- 
+-- 
+-- 
+--   create policy "Enable read access for all users"
+--   on "public"."appointments"
+--   as permissive
+--   for select
+--   to authenticated
+-- using (true);
+-- 
+-- 
+-- 
+--   create policy "Policy with table joins"
+--   on "public"."appointments"
+--   as permissive
+--   for update
+--   to authenticated
+-- using (true)
+-- with check (true);
+-- 
+-- 
+-- 
+--   create policy "Enable insert for authenticated users only"
+--   on "public"."companies"
+--   as permissive
+--   for insert
+--   to authenticated, anon
+-- with check (true);
+-- 
+-- 
+-- 
+--   create policy "Enable read access for all users"
+--   on "public"."companies"
+--   as permissive
+--   for select
+--   to authenticated, anon
+-- using (true);
+-- 
+-- 
+-- 
+--   create policy "Enable insert for authenticated users only"
+--   on "public"."configurations"
+--   as permissive
+--   for insert
+--   to authenticated
+-- with check (true);
+-- 
+-- 
+-- 
+--   create policy "Enable read access for all users"
+--   on "public"."configurations"
+--   as permissive
+--   for select
+--   to authenticated, anon
+-- using (true);
+-- 
+-- -- Datos
+-- 
+-- --
+-- -- Data for Name: appointment_status; Type: TABLE DATA; Schema: public; Owner: postgres
+-- --
+-- 
+-- INSERT INTO "public"."appointment_status" ("id", "created_at", "created_by", "updated_at", "updated_by", "deleted_at", "deleted_by", "name", "description") VALUES
+-- 	('517e3cc0-0763-4fd0-9195-756fe4617706', '2025-12-16 19:19:59.254227+00', NULL, NULL, NULL, NULL, NULL, 'available', 'Disponible'),
+-- 	('aa68683c-9977-4b6d-8c9c-aad1d3f0500f', '2025-12-16 19:20:17.901157+00', NULL, NULL, NULL, NULL, NULL, 'booked', 'Reservada'),
+-- 	('7cccd43a-1998-41e9-b70a-61a778106338', '2025-12-16 19:20:26.370501+00', NULL, NULL, NULL, NULL, NULL, 'confirmed', 'Confirmada'),
+-- 	('6aa423c3-db95-4633-9e31-a1bb92e16f2c', '2025-12-16 19:20:38.975514+00', NULL, NULL, NULL, NULL, NULL, 'cancelled', 'Cancelada'),
+-- 	('6eb8a4c9-d793-411a-a333-7c9c806c25df', '2025-12-16 19:20:48.191467+00', NULL, NULL, NULL, NULL, NULL, 'completed', 'Finalizada'),
+-- 	('fcd4937a-6f80-4134-87c2-f990dd910139', '2025-12-16 19:20:57.576665+00', NULL, NULL, NULL, NULL, NULL, 'no_show', 'Perdida');
+-- 
+-- 
+-- INSERT INTO "public"."configurations" ("id", "created_at", "created_by", "updated_at", "updated_by", "active", "company_id", "key", "value") VALUES
+-- 	('1f97558f-14cb-4ad7-82fc-5986697eb35a', NULL, '71352bdf-228a-4aac-b176-4b43679eeac8', '2025-12-09 19:09:25.104', '58c93b59-a8b6-4039-9480-a9052026fdee', false, NULL, 'tiktok_url', ''),
+-- 	('7166f7d2-6411-4b44-a60c-541f7894d82b', NULL, '71352bdf-228a-4aac-b176-4b43679eeac8', '2025-12-09 19:09:25.246', '58c93b59-a8b6-4039-9480-a9052026fdee', false, NULL, 'twitter_url', ''),
+-- 	('41a6e34c-c7a1-48b5-9a7c-c7175a8f402f', NULL, '71352bdf-228a-4aac-b176-4b43679eeac8', '2026-01-13 23:09:54.632', 'ec6e1bb1-6b54-4f2c-b608-cdcc99cf3496', true, NULL, 'enable_reservations', 'true'),
+-- 	('a048146d-5e6c-4f09-ba6e-c4532bf990f4', NULL, '71352bdf-228a-4aac-b176-4b43679eeac8', '2026-01-15 19:05:05.448', 'db0b5338-082a-46f8-aef9-2c76e043921a', false, NULL, 'facebook_url', ''),
+-- 	('5d8446e7-f003-40d0-ae7c-f6c9e5ab90b0', NULL, '71352bdf-228a-4aac-b176-4b43679eeac8', '2026-01-15 19:05:05.713', 'db0b5338-082a-46f8-aef9-2c76e043921a', false, NULL, 'linkedin_url', ''),
+-- 	('3c307091-3bf9-49c3-8fa4-ba41f99a9902', NULL, 'ec6e1bb1-6b54-4f2c-b608-cdcc99cf3496', '2026-02-11 23:26:57.817', 'ec6e1bb1-6b54-4f2c-b608-cdcc99cf3496', true, NULL, 'phone_number', '3113754899'),
+-- 	('a5f8b98c-9c0c-497a-8456-f15c79550b83', NULL, 'ec6e1bb1-6b54-4f2c-b608-cdcc99cf3496', '2026-02-11 23:27:08.098', 'ec6e1bb1-6b54-4f2c-b608-cdcc99cf3496', false, NULL, 'contact_phone', '3113754890'),
+-- 	('14abc61e-6128-45ff-99b1-7a8f9e2a0711', NULL, '71352bdf-228a-4aac-b176-4b43679eeac8', '2026-02-12 16:13:41.446', 'ec6e1bb1-6b54-4f2c-b608-cdcc99cf3496', true, NULL, 'phone_number', '3113754899'),
+-- 	('c283144e-f5df-4833-a8d3-a146d7fcf529', NULL, '71352bdf-228a-4aac-b176-4b43679eeac8', '2026-01-19 18:34:18.339', 'db0b5338-082a-46f8-aef9-2c76e043921a', true, NULL, 'cancellation_time', '60'),
+-- 	('a3d3fa8c-9bf3-407c-94cd-6cc550d725c6', NULL, '71352bdf-228a-4aac-b176-4b43679eeac8', '2026-01-19 18:34:19.241', 'db0b5338-082a-46f8-aef9-2c76e043921a', true, NULL, 'min_reservation_time', '180'),
+-- 	('ac9e7988-820c-41a0-9a88-e84832119c22', NULL, '71352bdf-228a-4aac-b176-4b43679eeac8', '2026-01-20 17:20:37.694', 'ec6e1bb1-6b54-4f2c-b608-cdcc99cf3496', true, NULL, 'email', 'amarjovizjz@gmail.com'),
+-- 	('b530674e-ab55-4602-b1e4-82df94a40d3f', NULL, '71352bdf-228a-4aac-b176-4b43679eeac8', '2026-01-20 17:20:37.799', 'ec6e1bb1-6b54-4f2c-b608-cdcc99cf3496', true, NULL, 'instagram_url', 'https://www.instagram.com/m.vbeautyroom/'),
+-- 	('08372f21-117e-4241-b8fa-1a9e0140048c', NULL, '71352bdf-228a-4aac-b176-4b43679eeac8', '2026-01-20 17:20:37.991', 'ec6e1bb1-6b54-4f2c-b608-cdcc99cf3496', true, NULL, 'whatsapp_url', 'https://wa.me/5213113754899');
