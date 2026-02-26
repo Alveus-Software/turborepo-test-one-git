@@ -21,7 +21,8 @@
     "@repo/profile": "*",
     "@repo/typescript-config": "*",
     "@repo/ui": "*",
-    "@repo/providers":"*"
+    "@repo/providers":"*",
+    "styled-jsx": "^5.1.7"
   },
   "devDependencies": {
     "@repo/about_us": "*",
