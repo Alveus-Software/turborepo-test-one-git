@@ -2,10 +2,10 @@
 
 import * as React from "react";
 import { Trash2, AlertCircle, Plus } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@repo/ui/button";
+import { Input } from "@repo/ui/input";
+import { Label } from "@repo/ui/label";
+import { Card, CardContent } from "@repo/ui/card";
 import { PriceListCombobox } from "./price-list-combobox";
 import { cn } from "@repo/lib/utils/utils";
 

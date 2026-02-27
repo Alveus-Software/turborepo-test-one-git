@@ -1,7 +1,7 @@
 "use server";
 
 import { ContactGroup } from "@/components/dashboard/grupo-de-contactos/contact-group-list";
-import { createClient } from "@/lib/supabase/server";
+import { createClient } from "@repo/lib/supabase/server";
 import { revalidatePath } from "next/cache";
 
 export interface Contact {

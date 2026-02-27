@@ -6,7 +6,7 @@ import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover";
+} from "@repo/ui/popover";
 import Link from "next/link";
 import { getIcon } from "@repo/lib/utils/icons";
 import { useState } from "react";

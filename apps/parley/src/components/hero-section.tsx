@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Building2,  User, DollarSign } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@repo/ui/button";
 import { HeroHeader } from "./header";
 import { AnimatedText } from "./animated-text";
 import { AnimatedCard } from "./animated-card";

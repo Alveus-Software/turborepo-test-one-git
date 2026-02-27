@@ -1,24 +1,24 @@
 "use client";
 
 import { cn } from "@repo/lib/utils/utils";
-import { createClient } from "@/lib/supabase/client";
-import { Button } from "@/components/ui/button";
+import { createClient } from "@repo/lib/supabase/client";
+import { Button } from "@repo/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+} from "@repo/ui/card";
+import { Input } from "@repo/ui/input";
+import { Label } from "@repo/ui/label";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState, useEffect } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import Image from "next/image";
-import { TextEffect } from "../ui/text-effect";
-import { AnimatedGroup } from "../ui/animated-group";
+import { TextEffect } from "@repo/ui/text-effect";
+import { AnimatedGroup } from "@repo/ui/animated-group";
 
 /* 🎨 Colores base */
 const GOLD = "#c6a365";

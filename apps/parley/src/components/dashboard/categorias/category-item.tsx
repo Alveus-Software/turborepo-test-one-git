@@ -6,7 +6,7 @@ import {
   Popover,
   PopoverTrigger,
   PopoverContent,
-} from "@/components/ui/popover";
+} from "@repo/ui/popover";
 import { useRouter } from "next/navigation";
 import { DeleteCategoryDialog } from "./delete-category-dialog";
 

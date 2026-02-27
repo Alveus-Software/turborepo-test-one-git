@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useEffect, useMemo } from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@repo/ui/card";
+import { Button } from "@repo/ui/button";
 import { Loader2, LogIn, LogOut, User, Clock, CheckCircle } from "lucide-react";
 import { 
   toggleAttendance, 
@@ -10,12 +10,12 @@ import {
   getAttendanceReasons,
   type AttendanceReason,
   type AttendanceTransaction
-} from "@/lib/actions/attendance.actions";
-import { fetchUserProfile } from "@/lib/actions/user.actions";
+} from "@repo/lib/actions/attendance.actions";
+import { fetchUserProfile } from "@repo/lib/actions/user.actions";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Avatar, AvatarFallback, AvatarImage } from "@repo/ui/avatar";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@repo/ui/select";
 
 // Define la interface de props
 interface AttendanceCheckInProps {

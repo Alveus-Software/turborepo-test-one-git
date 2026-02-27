@@ -1,6 +1,6 @@
 "use server"
 
-import { createClient } from "@/lib/supabase/server"
+import { createClient } from "@repo/lib/supabase/server"
 import { ContactGroup } from "@/components/dashboard/grupo-de-contactos/contact-group-list"
 
 interface CreateContactGroupPayload {

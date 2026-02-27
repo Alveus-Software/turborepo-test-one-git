@@ -19,7 +19,7 @@ import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover";
+} from "@repo/ui/popover";
 import { DeleteTaxDialog } from "./delete-tax-dialog";
 
 interface TaxesTableProps {

@@ -1,4 +1,4 @@
-import { createClient } from "@/lib/supabase/client";
+import { createClient } from "@repo/lib/supabase/client";
 import { useCompany } from "@/app/providers/company-provider";
 
 /**

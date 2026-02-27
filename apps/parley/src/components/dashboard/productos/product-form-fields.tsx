@@ -3,17 +3,17 @@
 import type React from "react";
 import { useEffect, useRef } from "react";
 
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
+import { Input } from "@repo/ui/input";
+import { Label } from "@repo/ui/label";
+import { Textarea } from "@repo/ui/textarea";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { Button } from "@/components/ui/button";
+} from "@repo/ui/select";
+import { Button } from "@repo/ui/button";
 import { Loader2 } from "lucide-react";
 import { PriceListCombobox } from "./price-list-combobox";
 import { generateNameUnaccent } from "@/lib/text-utils";

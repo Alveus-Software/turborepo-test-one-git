@@ -2,9 +2,9 @@
 
 import * as React from "react"
 import { Check, ChevronDown } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command"
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
+import { Button } from "@repo/ui/button"
+import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@repo/ui/command"
+import { Popover, PopoverContent, PopoverTrigger } from "@repo/ui/popover"
 import { cn } from "@repo/lib/utils/utils"
 
 interface PriceList {

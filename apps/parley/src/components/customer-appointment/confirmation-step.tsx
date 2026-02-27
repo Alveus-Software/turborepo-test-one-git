@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { CheckCircle, AlertCircle, ArrowLeft, User, LogIn, UserPlus } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@repo/ui/button";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 

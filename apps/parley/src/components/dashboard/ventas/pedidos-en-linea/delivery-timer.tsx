@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Card } from "@/components/ui/card"
+import { Card } from "@repo/ui/card"
 import { Timer } from "lucide-react"
 import type { DeliveryOrder } from "@/lib/actions/delivery.actions"
 

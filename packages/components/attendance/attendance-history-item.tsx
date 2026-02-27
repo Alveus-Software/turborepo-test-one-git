@@ -1,17 +1,17 @@
 "use client";
 
 import { useState } from "react";
-import type { AttendanceTransaction } from "@/lib/actions/attendance.actions";
+import type { AttendanceTransaction } from "@repo/lib/actions/attendance.actions";
 import { LogIn, LogOut, Info } from "lucide-react";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
+import { Avatar, AvatarFallback } from "@repo/ui/avatar";
+import { Button } from "@repo/ui/button";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover";
+} from "@repo/ui/popover";
 
 interface AttendanceHistoryItemProps {
   transaction: AttendanceTransaction;

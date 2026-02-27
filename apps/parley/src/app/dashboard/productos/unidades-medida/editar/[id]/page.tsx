@@ -10,7 +10,7 @@ import {
   updateMeasurement,
   getMeasurementOptions,
 } from "@/lib/actions/measurement.actions";
-import { createClient } from "@/lib/supabase/client";
+import { createClient } from "@repo/lib/supabase/client";
 
 const supabase = createClient();
 

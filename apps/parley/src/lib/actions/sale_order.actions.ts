@@ -1,6 +1,6 @@
 "use server";
 
-import { createClient } from "@/lib/supabase/server";
+import { createClient } from "@repo/lib/supabase/server";
 
 interface SaleItem {
   id: string;

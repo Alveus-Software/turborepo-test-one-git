@@ -17,8 +17,8 @@ import {
   getAllCompanies,
   updateCompany,
 } from "@/lib/actions/company.actions";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { Button } from "@repo/ui/button";
+import { Input } from "@repo/ui/input";
 
 interface AddChildrenModalProps {
   isOpen: boolean;

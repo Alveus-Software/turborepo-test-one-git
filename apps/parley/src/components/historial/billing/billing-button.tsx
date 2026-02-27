@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
+import { Button } from "@repo/ui/button"
 import { FileText, CheckCircle2 } from "lucide-react"
 import { BillingDataForm } from "@/components/historial/billing/billing-data-form"
 import { toast } from "sonner"

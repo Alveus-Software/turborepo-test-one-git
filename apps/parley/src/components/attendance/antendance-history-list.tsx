@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import { getAttendanceHistory, getAttendanceReasons, type AttendanceFilters } from "@/lib/actions/attendance.actions";
 import type { AttendanceTransactionsResponse, AttendanceReason } from "@/lib/actions/attendance.actions";
 import AttendanceHistoryItem from "./attendance-history-item";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { Input } from "@repo/ui/input";
+import { Label } from "@repo/ui/label";
 import { Filter, ChevronDown, ChevronUp, X, ChevronLeft, ChevronRight } from "lucide-react";
 
 // Opciones de tipos de eventos

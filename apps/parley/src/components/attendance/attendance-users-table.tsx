@@ -8,7 +8,7 @@ import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover";
+} from "@repo/ui/popover";
 import { MoreVertical, UserPlus, Trash2, User, Search } from "lucide-react";
 import {
   getAttendanceUsers,

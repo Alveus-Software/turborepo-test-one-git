@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { createClient } from "@repo/lib/supabase/client";
-import Link from "next/link";
 import { Button } from "@repo/ui/button";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
@@ -116,8 +115,8 @@ export default function ClientAppointmentPagePackage() {
       <Dialog open={true} onOpenChange={() => {}}>
         <DialogContent 
           className="w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl xl:max-w-6xl max-h-[85vh] overflow-y-auto p-6 bg-white border border-[#f5efe6] rounded-2xl shadow-lg"
-          onPointerDownOutside={(e) => e.preventDefault()}
-          onEscapeKeyDown={(e) => e.preventDefault()}
+          onPointerDownOutside={(e:any) => e.preventDefault()}
+          onEscapeKeyDown={(e:any) => e.preventDefault()}
           showCloseButton={false}
         >
         <div className="relative">

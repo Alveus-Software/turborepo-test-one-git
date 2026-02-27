@@ -6,7 +6,7 @@ import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover";
+} from "@repo/ui/popover";
 import { MoreVertical } from "lucide-react";
 import Link from "next/link";
 import { DeleteProfileDialog } from "./delete-profile-dialog";

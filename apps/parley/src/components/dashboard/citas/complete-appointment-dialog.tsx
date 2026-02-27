@@ -8,9 +8,9 @@ import {
   DialogTitle,
   DialogDescription,
   DialogFooter,
-} from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+} from "@repo/ui/dialog";
+import { Button } from "@repo/ui/button";
+import { Input } from "@repo/ui/input";
 import { toast } from "sonner";
 import { CheckCircle, Calendar, User, Mail, Phone } from "lucide-react";
 import { format } from "date-fns";

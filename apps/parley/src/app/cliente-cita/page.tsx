@@ -1,9 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { createClient } from "@/lib/supabase/client";
+import { createClient } from "@repo/lib/supabase/client";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { Button } from "@repo/ui/button";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import { 
@@ -18,8 +18,8 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
+} from "@repo/ui/dialog";
+import { Input } from "@repo/ui/input";
 import { getProfessionalsWithAvailableSlots } from "@/lib/actions/appointment.actions";
 
 // Definir tipo para profesional

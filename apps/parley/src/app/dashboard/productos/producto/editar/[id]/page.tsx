@@ -15,8 +15,8 @@ import {
   updateProductTaxes,
 } from "@/lib/actions/product.actions";
 import { getMeasurementOptions } from "@/lib/actions/measurement.actions";
-import { createClient } from "@/lib/supabase/client";
-import { uploadFile } from "@/lib/supabase/upload-image";
+import { createClient } from "@repo/lib/supabase/client";
+import { uploadFile } from "@repo/lib/supabase/upload-image";
 import ProductFormFields from "@/components/dashboard/productos/product-form-fields";
 import { ProductFormSkeleton } from "@/components/dashboard/productos/product-form-skeleton";
 import { ProductPriceList } from "@/components/dashboard/productos/price-list-selector";

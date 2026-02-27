@@ -1,19 +1,19 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
+import { Label } from "@repo/ui/label";
+import { Button } from "@repo/ui/button";
 import { X, Plus, Search } from "lucide-react";
-import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
+import { Input } from "@repo/ui/input";
+import { Badge } from "@repo/ui/badge";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { ScrollArea } from "@/components/ui/scroll-area";
+} from "@repo/ui/select";
+import { ScrollArea } from "@repo/ui/scroll-area";
 import { cn } from "@repo/lib/utils/utils";
 
 interface Tax {

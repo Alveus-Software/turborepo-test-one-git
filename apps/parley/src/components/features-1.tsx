@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@repo/ui/card";
 import { CheckCircle, ChevronDown } from "lucide-react";
 import Image from "next/image";
 

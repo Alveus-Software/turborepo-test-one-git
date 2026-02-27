@@ -5,16 +5,16 @@ import { TaxesTable } from "./taxes-table";
 import { TaxPagination } from "./tax-pagination";
 import { getAllTaxes, type Tax } from "@/lib/actions/tax.actions";
 import { Search, Filter, X, ChevronDown, ChevronUp } from "lucide-react";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import { Input } from "@repo/ui/input";
+import { Button } from "@repo/ui/button";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { Label } from "@/components/ui/label";
+} from "@repo/ui/select";
+import { Label } from "@repo/ui/label";
 
 interface TaxesContainerProps {
   userPermissions?: string[];

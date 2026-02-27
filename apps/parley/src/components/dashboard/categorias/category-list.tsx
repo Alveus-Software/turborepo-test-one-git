@@ -1,10 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { createClient } from "@/lib/supabase/client";
+import { createClient } from "@repo/lib/supabase/client";
 import CategoryItem from "./category-item";
 import { CategoryDialog } from "./category-dialog";
-import { Button } from "@/components/ui/button";
+import { Button } from "@repo/ui/button";
 import { Plus } from "lucide-react";
 import Link from "next/link";
 import { CategoryPagination } from "./category-pagination";

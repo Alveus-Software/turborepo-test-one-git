@@ -12,12 +12,12 @@ import {
   UserCheck,
   BanknoteArrowUp
 } from "lucide-react";
-import { Card } from "@/components/ui/card";
+import { Card } from "@repo/ui/card";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover";
+} from "@repo/ui/popover";
 import { OnlineOrder } from "@/lib/actions/sale_order.actions";
 import { useOnlineOrderActions } from "@/components/dashboard/pedidos-en-linea/online-order-actions";
 import { format, formatDistanceToNow } from "date-fns";

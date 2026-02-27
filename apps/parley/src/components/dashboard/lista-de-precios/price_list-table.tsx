@@ -13,7 +13,7 @@ import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover";
+} from "@repo/ui/popover";
 import { PriceListPagination } from "./price_list-pagination";
 import { DeletePriceListDialog } from "./delete-price-list-dialog";
 

@@ -3,7 +3,7 @@
 import { useState, useEffect, useMemo } from "react";
 import ZoneItem from "./zone-item";
 import { ZoneDialog } from "./zone-dialog";
-import { Button } from "@/components/ui/button";
+import { Button } from "@repo/ui/button";
 import { Plus } from "lucide-react";
 import Link from "next/link";
 import { ZonePagination } from "./zone-pagination";

@@ -3,8 +3,8 @@
 import { useState, useEffect } from "react";
 import { Plus, Search, X, Phone, Building2, MapPin } from "lucide-react";
 import { Company, getAllCompanies } from "@/lib/actions/company.actions";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import { Input } from "@repo/ui/input";
+import { Button } from "@repo/ui/button";
 import { AddChildrenModal } from "./add-child-modal";
 import { RemoveAffiliationDialog } from "./remove-affilation-dialog";
 

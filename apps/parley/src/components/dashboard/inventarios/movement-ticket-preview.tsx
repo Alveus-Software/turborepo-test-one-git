@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { PDFViewer } from "@react-pdf/renderer";
 import MovementTicketPDF from "./movements-ticket-pdf";
-import { Button } from "@/components/ui/button";
+import { Button } from "@repo/ui/button";
 import { Printer, Download, X, FileText, Eye } from "lucide-react";
 
 interface MovementGroup {

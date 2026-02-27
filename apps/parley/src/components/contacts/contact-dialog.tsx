@@ -10,8 +10,8 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog"
-import { Button } from "@/components/ui/button"
+} from "@repo/ui/dialog"
+import { Button } from "@repo/ui/button"
 import type { Contact } from "./contact-list"
 import { createContact, updateContact } from "@/lib/actions/contact.actions"
 

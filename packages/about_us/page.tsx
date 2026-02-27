@@ -1,8 +1,5 @@
 "use client";
 
-import { Card, CardContent } from "@repo/ui/card";
-import { Badge } from "@repo/ui/badge";
-import { Lightbulb, Target, Users, Zap, Heart, Rocket } from "lucide-react";
 import { useEffect, useState } from "react";
 
 import { HeroHeader } from "@repo/components/header";

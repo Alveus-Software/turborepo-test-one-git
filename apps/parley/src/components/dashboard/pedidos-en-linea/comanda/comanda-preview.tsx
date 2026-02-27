@@ -4,7 +4,7 @@
 import { useState, useEffect } from "react";
 import { PDFViewer } from '@react-pdf/renderer';
 import OrderComandaPDF from './order-comanda-pdf';
-import { Button } from "@/components/ui/button";
+import { Button } from "@repo/ui/button";
 import { Printer, Download, X, FileText } from "lucide-react";
 
 interface ComandaPreviewProps {

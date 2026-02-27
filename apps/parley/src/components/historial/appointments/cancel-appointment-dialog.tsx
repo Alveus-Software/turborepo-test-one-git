@@ -7,9 +7,9 @@ import {
   DialogHeader,
   DialogTitle,
   DialogDescription,
-} from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+} from "@repo/ui/dialog";
+import { Button } from "@repo/ui/button";
+import { Input } from "@repo/ui/input";
 import { toast } from "sonner";
 import { cancelAppointment } from "@/lib/actions/appointment.actions";
 

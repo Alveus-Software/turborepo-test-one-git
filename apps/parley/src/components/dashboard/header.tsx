@@ -1,12 +1,12 @@
 "use client";
 import { Menu, User, Maximize2, LogOut, Globe } from "lucide-react";
-import { createClient } from "@/lib/supabase/client";
+import { createClient } from "@repo/lib/supabase/client";
 import { useRouter } from "next/navigation";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover";
+} from "@repo/ui/popover";
 import Swal from "sweetalert2";
 import CompanySelector from "./company-selector";
 

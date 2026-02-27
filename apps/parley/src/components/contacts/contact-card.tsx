@@ -19,7 +19,7 @@ import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover";
+} from "@repo/ui/popover";
 import { useRouter } from "next/navigation";
 // import { sendWhatsAppMessage } from "@/lib/actions/server.actions";
 import { toast } from "sonner";

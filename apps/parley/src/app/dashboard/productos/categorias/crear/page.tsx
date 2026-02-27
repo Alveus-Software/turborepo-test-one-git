@@ -12,8 +12,8 @@ import {
 } from "@/lib/actions/category.actions";
 import type { ProductCategory } from "@/components/dashboard/categorias/category-list";
 import CategoryForm from "@/components/dashboard/categorias/category-form";
-import { createClient } from "@/lib/supabase/client";
-import { uploadFile } from "@/lib/supabase/upload-image";
+import { createClient } from "@repo/lib/supabase/client";
+import { uploadFile } from "@repo/lib/supabase/upload-image";
 
 const supabase = createClient();
 

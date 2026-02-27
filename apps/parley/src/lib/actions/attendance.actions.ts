@@ -1,6 +1,6 @@
 "use server";
 
-import { createClient } from "@/lib/supabase/server";
+import { createClient } from "@repo/lib/supabase/server";
 import { revalidatePath } from "next/cache";
 
 const DEFAULT_REASON_ID = "007e8e5d-1e6d-4582-bb25-ad8ae2270f4f";

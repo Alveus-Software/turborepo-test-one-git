@@ -12,13 +12,13 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "@repo/ui/select";
 import { getIcon } from "@repo/lib/utils/icons";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover";
+} from "@repo/ui/popover";
 import { MoreVertical } from "lucide-react";
 import Link from "next/link";
 import { DeletePermissionDialog } from "./delete-permission-dialog";

@@ -7,7 +7,7 @@ import { type User } from "@/lib/actions/user.actions";
 import { getIcon } from "@repo/lib/utils/icons";
 import { useEffect, useState } from "react";
 import { getUserWithPermissions } from "@/lib/actions/user.actions";
-import { getImageUrl } from "@/lib/supabase/upload-image";
+import { getImageUrl } from "@repo/lib/supabase/upload-image";
 import { usePathname } from "next/navigation";
 
 interface SidebarProps {

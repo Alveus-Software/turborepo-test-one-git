@@ -1,17 +1,17 @@
 "use client";
 
 import { cn } from "@repo/lib/utils/utils";
-import { createClient } from "@/lib/supabase/client";
-import { Button } from "@/components/ui/button";
+import { createClient } from "@repo/lib/supabase/client";
+import { Button } from "@repo/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+} from "@repo/ui/card";
+import { Input } from "@repo/ui/input";
+import { Label } from "@repo/ui/label";
 import Link from "next/link";
 import { useState } from "react";
 import { TextEffect } from "../ui/text-effect";

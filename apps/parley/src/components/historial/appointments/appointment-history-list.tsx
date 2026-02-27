@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import { getMyAppointmentHistory } from "@/lib/actions/appointment.actions";
 import type { AppointmentsResponse } from "@/lib/actions/appointment.actions";
 import AppointmentHistoryItem from "./appointment-history-item";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { Input } from "@repo/ui/input";
+import { Label } from "@repo/ui/label";
 import { Filter, ChevronDown, ChevronUp, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { AppointmentPagination } from "./appointment-history-pagination";
 

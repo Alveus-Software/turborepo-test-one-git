@@ -8,10 +8,10 @@ import {
   DialogTitle,
   DialogDescription,
   DialogFooter,
-} from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+} from "@repo/ui/dialog";
+import { Button } from "@repo/ui/button";
+import { Input } from "@repo/ui/input";
+import { Textarea } from "@repo/ui/textarea";
 import { toast } from "sonner";
 import { XCircle, Calendar, User, Mail, Phone, AlertCircle } from "lucide-react";
 import { format } from "date-fns";

@@ -5,7 +5,7 @@ import { type OnlineOrder, getOnlineOrders } from "@/lib/actions/sale_order.acti
 import { OnlineOrderCard } from "./online-order-card"
 import { OnlineOrdersPagination } from "./online-orders-pagination"
 import { OnlineOrdersFilters } from "./online-orders-filters"
-import { Card } from "@/components/ui/card"
+import { Card } from "@repo/ui/card"
 import { Package, RefreshCw } from "lucide-react"
 import { useRealtimeOnlineOrders } from "@/hooks/useRealtimeOnlineOrders"
 

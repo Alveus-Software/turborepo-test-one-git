@@ -1,9 +1,9 @@
 "use client"
 
-import { Card } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Separator } from "@/components/ui/separator"
+import { Card } from "@repo/ui/card"
+import { Badge } from "@repo/ui/badge"
+import { Button } from "@repo/ui/button"
+import { Separator } from "@repo/ui/separator"
 import {
   Package,
   Calendar,

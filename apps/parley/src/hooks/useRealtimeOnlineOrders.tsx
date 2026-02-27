@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { createClient } from "@/lib/supabase/client";
+import { createClient } from "@repo/lib/supabase/client";
 import { OnlineOrder } from "@/lib/actions/sale_order.actions";
 
 // Claves para localStorage

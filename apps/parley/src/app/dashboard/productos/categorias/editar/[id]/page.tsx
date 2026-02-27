@@ -3,12 +3,12 @@
 import { useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
-import { createClient } from "@/lib/supabase/client";
+import { createClient } from "@repo/lib/supabase/client";
 import { toast } from "sonner";
 import type { ProductCategory } from "@/components/dashboard/categorias/category-list";
 import CategoryForm from "@/components/dashboard/categorias/category-form";
 import { updateCategory } from "@/lib/actions/category.actions";
-import { uploadFile } from "@/lib/supabase/upload-image";
+import { uploadFile } from "@repo/lib/supabase/upload-image";
 
 const supabase = createClient();
 

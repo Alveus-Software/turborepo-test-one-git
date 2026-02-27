@@ -1,7 +1,7 @@
 "use client";
 import { motion, useAnimation } from "framer-motion";
 import { Phone, Mail, MapPin, Scale, Facebook, Instagram } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@repo/ui/button";
 import { useState, useEffect } from "react";
 import {
   getSocialMediaConfigs,

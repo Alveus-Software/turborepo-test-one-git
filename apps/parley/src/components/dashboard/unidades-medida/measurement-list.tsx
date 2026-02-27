@@ -1,9 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { createClient } from "@/lib/supabase/client";
+import { createClient } from "@repo/lib/supabase/client";
 import MeasurementItem from "./measurement-item";
-import { Button } from "@/components/ui/button";
+import { Button } from "@repo/ui/button";
 import { Plus, Search } from "lucide-react";
 import Link from "next/link";
 import type { MeasurementsResponse } from "@/lib/definitions"; 

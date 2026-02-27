@@ -16,9 +16,9 @@ import {
   type Company,
   type CompaniesResponse,
 } from "@/lib/actions/company.actions";
-import { Input } from "@/components/ui/input";
+import { Input } from "@repo/ui/input";
 import { DeleteCompanyDialog } from "./delete-company-dialog";
-import { Button } from "@/components/ui/button";
+import { Button } from "@repo/ui/button";
 
 interface CompanyListProps {
   userPermissions?: string[];

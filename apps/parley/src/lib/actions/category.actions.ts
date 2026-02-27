@@ -1,6 +1,6 @@
 "use server"
 
-import { createClient } from "@/lib/supabase/server"
+import { createClient } from "@repo/lib/supabase/server"
 import type { ProductCategory } from "@/components/dashboard/categorias/category-list"
 
 interface DeleteCategoryPayload {

@@ -4,7 +4,7 @@ import { useState } from "react"
 import type { Product } from "@/lib/actions/product.actions"
 import { ImageIcon, MoreVertical } from "lucide-react"
 import Image from "next/image"
-import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover"
+import { Popover, PopoverTrigger, PopoverContent } from "@repo/ui/popover"
 import { useRouter } from "next/navigation"
 
 interface ProductTableRowProps {

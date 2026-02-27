@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { PDFViewer } from "@react-pdf/renderer"
 import OrderComandaPDF from "@/components/historial/tickets/order-ticket-pdf"
-import { Button } from "@/components/ui/button"
+import { Button } from "@repo/ui/button"
 import { Printer, X, FileText } from "lucide-react"
 
 interface ComandaPreviewProps {

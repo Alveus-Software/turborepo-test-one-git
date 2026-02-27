@@ -10,7 +10,7 @@ import {
   Phone,
   ArrowRight,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@repo/ui/button";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
 

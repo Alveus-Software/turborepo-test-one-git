@@ -9,34 +9,17 @@
     "lint": "echo 'Add lint script here'"
   },
   "dependencies": {
-    "@repo/about_us": "*",
-    "@repo/api": "*",
-    "@repo/appointments": "*",
-    "@repo/auth": "*",
-    "@repo/checador": "*",
-    "@repo/cliente-cita": "*",
-    "@repo/dashboard": "*",
     "@repo/eslint-config": "*",
     "@repo/lib": "*",
-    "@repo/profile": "*",
     "@repo/typescript-config": "*",
     "@repo/ui": "*",
-    "@repo/providers":"*",
     "styled-jsx": "^5.1.7"
   },
   "devDependencies": {
-    "@repo/about_us": "*",
-    "@repo/api": "*",
-    "@repo/appointments": "*",
-    "@repo/auth": "*",
-    "@repo/checador": "*",
-    "@repo/cliente-cita": "*",
-    "@repo/dashboard": "*",
     "@repo/eslint-config": "*",
     "@repo/lib": "*",
-    "@repo/profile": "*",
     "@repo/typescript-config": "*",
     "@repo/ui": "*",
-    "@repo/providers":"*"
+    "styled-jsx": "^5.1.7"
   }
 }

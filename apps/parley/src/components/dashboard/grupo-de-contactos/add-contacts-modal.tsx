@@ -17,8 +17,8 @@ import {
   createGroupContacts, 
   getAllContacts, 
   getAvailableContactsForGroup } from "@/lib/actions/contact.actions";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { Button } from "@repo/ui/button";
+import { Input } from "@repo/ui/input";
 import { getContactGroupById } from "@/lib/actions/contact_group.actions";
 
 interface AddContactsModalProps {

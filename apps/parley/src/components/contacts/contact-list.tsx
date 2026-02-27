@@ -28,17 +28,17 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+} from "@repo/ui/select";
+import { Input } from "@repo/ui/input";
+import { Label } from "@repo/ui/label";
 import { DeleteContactDialog } from "./delete-contact-dialog";
-import { Button } from "@/components/ui/button";
+import { Button } from "@repo/ui/button";
 import { ContactGroup } from "../dashboard/grupo-de-contactos/contact-group-list";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover";
+} from "@repo/ui/popover";
 import {
   Command,
   CommandEmpty,
@@ -46,7 +46,7 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "@/components/ui/command";
+} from "@repo/ui/command";
 import { cn } from "@repo/lib/utils/utils";
 
 interface ContactListProps {

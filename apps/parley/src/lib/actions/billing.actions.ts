@@ -1,6 +1,6 @@
 "use server";
 
-import { createClient } from "@/lib/supabase/server";
+import { createClient } from "@repo/lib/supabase/server";
 import { BillingData } from "@/components/historial/billing/billing-data-form";
 
 export async function saveBillingInfo(

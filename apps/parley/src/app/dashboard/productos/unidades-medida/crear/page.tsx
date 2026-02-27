@@ -7,7 +7,7 @@ import { ArrowLeft } from "lucide-react";
 import { toast } from "sonner";
 import { createMeasurement } from "@/lib/actions/measurement.actions";
 import MeasurementForm from "@/components/dashboard/unidades-medida/measurement-form";
-import { createClient } from "@/lib/supabase/client";
+import { createClient } from "@repo/lib/supabase/client";
 import type { NewMeasurementPayload } from "@/lib/definitions";
 
 const supabase = createClient();

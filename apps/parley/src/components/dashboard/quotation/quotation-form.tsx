@@ -2,8 +2,8 @@
 
 import type React from "react"
 import { useState, useEffect } from "react"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
+import { Input } from "@repo/ui/input"
+import { Button } from "@repo/ui/button"
 import { Loader2, Plus, Trash2, Search, MoreVertical, Barcode, DollarSign, ChevronDown } from "lucide-react"
 import { 
   searchProductsByName, 

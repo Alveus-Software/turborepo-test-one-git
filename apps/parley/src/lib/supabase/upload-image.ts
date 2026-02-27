@@ -1,5 +1,5 @@
 "use server";
-import { createClient } from "@/lib/supabase/server";
+import { createClient } from "@repo/lib/supabase/server";
 
 export async function uploadFile(bucket: string, entityId: string, file: File) {
   const supabase = await createClient();

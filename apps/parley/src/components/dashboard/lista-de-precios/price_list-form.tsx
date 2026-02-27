@@ -11,8 +11,8 @@ import {
   createPriceList,
   updatePriceList,
 } from "@/lib/actions/price_list.actions";
-import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
+import { Button } from "@repo/ui/button";
+import { Label } from "@repo/ui/label";
 
 interface PriceListFormProps {
   initialData?: {

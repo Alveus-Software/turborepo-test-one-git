@@ -14,10 +14,10 @@ import {
   Truck,
   MoreVertical,
 } from "lucide-react";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Label } from "@/components/ui/label";
+import { Input } from "@repo/ui/input";
+import { Button } from "@repo/ui/button";
+import { Checkbox } from "@repo/ui/checkbox";
+import { Label } from "@repo/ui/label";
 import { ConfirmDeleteWarehouseDialog } from "@/components/dashboard/almacenes/confirm-delete-warehouse-dialog";
 import { deleteInventoryLocation } from "@/lib/actions/warehouse.actions";
 import { toast } from "sonner";

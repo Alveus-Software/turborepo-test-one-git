@@ -5,12 +5,12 @@ import FooterSection from "@/components/footer";
 import HeroSection from "@/components/hero-section";
 import { WhatsAppFloat } from "@/components/landing/whatsapp-float";
 import SeasonSection from "@/components/season-section";
-import { getWhatsAppContacts } from "@repo/lib/utils/utils/whatsapp_contacts";
+import { getWhatsAppContacts } from "@repo/lib/utils/whatsapp_contacts";
 import Image from "next/image";
 import ContactSection from "@/components/contact-section";
 import FAQSection from "@/components/faq-section";
 import FloatingInfo from "@/components/landing/floating-info";
-import { getPhoneContacts } from "@repo/lib/utils/utils/phone_contacts";
+import { getPhoneContacts } from "@repo/lib/utils/phone_contacts";
 import { PhoneFloat } from "@/components/landing/phone-float";
 ;
 

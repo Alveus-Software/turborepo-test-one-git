@@ -1,9 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { createClient } from "@/lib/supabase/client";
+import { createClient } from "@repo/lib/supabase/client";
 import AppointmentItem from "./appointment-item";
-import { Button } from "@/components/ui/button";
+import { Button } from "@repo/ui/button";
 import {
   Plus,
   Search,
@@ -37,9 +37,9 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+} from "@repo/ui/select";
+import { Input } from "@repo/ui/input";
+import { Label } from "@repo/ui/label";
 import { DeleteAppointmentAvailableDialog } from "./delete-appointment-available-dialog";
 import { getCurrentUser } from "@/lib/actions/user.actions";
 import { toast } from "sonner";

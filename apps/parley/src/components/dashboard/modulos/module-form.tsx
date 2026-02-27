@@ -1,6 +1,6 @@
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@repo/ui/select";
 import { Module, NewModulePayload } from "@/lib/definitions";
-import { getIcon } from '@repo/lib/utils/utils/icons';
+import { getIcon } from '@repo/lib/utils/icons';
 import { Info } from 'lucide-react';
 import { useEffect } from "react";
 

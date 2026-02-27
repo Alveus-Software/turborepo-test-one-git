@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 import CompanyCard from "./company-card";
 import { Plus, Search, Building2 } from "lucide-react";
 import { Company, getCompanyById, getAllCompanies } from "@/lib/actions/company.actions";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import { Input } from "@repo/ui/input";
+import { Button } from "@repo/ui/button";
 import { CompanyPagination } from "./company-pagination";
 
 interface CompanyChildrenProps {

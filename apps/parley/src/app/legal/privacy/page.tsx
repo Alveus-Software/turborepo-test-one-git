@@ -2,7 +2,7 @@ import FooterSection from "@/components/footer";
 import { HeroHeader } from "@/components/header";
 import Link from "next/link";
 import { WhatsAppFloat } from "@/components/landing/whatsapp-float";
-import { getWhatsAppContacts } from "@repo/lib/utils/utils/whatsapp_contacts";
+import { getWhatsAppContacts } from "@/lib/utils/whatsapp_contacts";
 
 export default async function AvisoDePrivacidadPage() {
   const contacts = await getWhatsAppContacts();

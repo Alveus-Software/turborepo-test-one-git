@@ -10,8 +10,8 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog"
-import { Button } from "@/components/ui/button"
+} from "@repo/ui/dialog"
+import { Button } from "@repo/ui/button"
 import type { Product } from "./product-list"
 import { getActiveCategories, createProduct, updateProduct } from "@/lib/actions/product.actions"
 import { userAgent } from "next/server"

@@ -1,6 +1,6 @@
 "use server";
 
-import { createClient } from "@/lib/supabase/server";
+import { createClient } from "@repo/lib/supabase/server";
 import { revalidatePath } from "next/cache";
 import { removeAccentsAndSpecialChars } from "@/lib/text-utils";
 import { ProductPriceList } from "@/components/dashboard/productos/price-list-selector";
