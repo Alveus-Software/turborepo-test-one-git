@@ -24,7 +24,7 @@ import { useRouter } from "next/navigation";
 import { Badge } from "@repo/ui/badge";
 import { format, formatDistanceToNow } from "date-fns";
 import { es } from "date-fns/locale";
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/lib/utils/utils";
 
 // Mapeo de colores para estados (en español)
 const statusColors: Record<string, string> = {

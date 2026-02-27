@@ -47,7 +47,7 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command";
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/lib/utils/utils";
 
 interface ContactListProps {
   userPermissions?: string[];

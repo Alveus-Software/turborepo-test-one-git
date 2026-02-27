@@ -14,7 +14,7 @@ import {
   SelectValue,
 } from "@repo/ui/select";
 import { ScrollArea } from "@repo/ui/scroll-area";
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/lib/utils/utils";
 
 interface Tax {
   id: string;

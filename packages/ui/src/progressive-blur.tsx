@@ -1,5 +1,5 @@
 'use client';
-import { cn } from '@/lib/utils';
+import { cn } from '@repo/lib/utils/utils';
 import { HTMLMotionProps, motion } from 'motion/react';
 
 export const GRADIENT_ANGLES = {

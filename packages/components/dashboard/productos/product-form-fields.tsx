@@ -18,7 +18,7 @@ import { Loader2 } from "lucide-react";
 import { PriceListCombobox } from "./price-list-combobox";
 import { generateNameUnaccent } from "@/lib/text-utils";
 import ImageUpload from "@/components/image-upload";
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/lib/utils/utils";
 import { PriceListSelector, ProductPriceList } from "./price-list-selector";
 import { TaxSelector } from "./tax-selector";
 

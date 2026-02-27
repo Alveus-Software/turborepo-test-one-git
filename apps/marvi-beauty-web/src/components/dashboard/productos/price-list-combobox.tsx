@@ -5,7 +5,7 @@ import { Check, ChevronDown } from "lucide-react"
 import { Button } from "@repo/ui/button"
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@repo/ui/command"
 import { Popover, PopoverContent, PopoverTrigger } from "@repo/ui/popover"
-import { cn } from "@/lib/utils"
+import { cn } from "@repo/lib/utils/utils"
 
 interface PriceList {
   id: string

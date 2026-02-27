@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { createClient } from "@/lib/supabase/client";
+import { createClient } from "@repo/lib/supabase/client";
 import { User } from "@supabase/supabase-js";
 import {
   DropdownMenu,
@@ -11,8 +11,8 @@ import {
   DropdownMenuTrigger,
   DropdownMenuSeparator,
   DropdownMenuLabel,
-} from "@/components/ui/dropdown-menu";
-import { Button } from "@/components/ui/button";
+} from "@repo/ui/dropdown-menu";
+import { Button } from "@repo/ui/button";
 import {
   ChevronDown,
   UserCircle2,
@@ -24,8 +24,8 @@ import {
   Calendar1,
   Clock,
 } from "lucide-react";
-import { areReservationsEnabled } from "@/lib/actions/configuration.actions";
-import { isUserInAttendanceList } from "@/lib/actions/attendance.actions";
+import { areReservationsEnabled } from "@repo/lib/actions/configuration.actions";
+import { isUserInAttendanceList } from "@repo/lib/actions/attendance.actions";
 
 export function AuthButton({ mobileView = false }: { mobileView?: boolean }) {
   const supabase = createClient();

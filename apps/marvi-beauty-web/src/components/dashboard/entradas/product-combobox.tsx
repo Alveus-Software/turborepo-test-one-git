@@ -12,7 +12,7 @@ import {
 import { Button } from "@repo/ui/button";
 import { Check, ChevronsUpDown } from "lucide-react";
 import { Popover, PopoverContent, PopoverTrigger } from "@repo/ui/popover";
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/lib/utils/utils";
 
 interface Product {
   id: string;

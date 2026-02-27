@@ -8,7 +8,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import Link from "next/link";
-import { getIcon } from "@/lib/utils/icons";
+import { getIcon } from "@repo/lib/utils/icons";
 import { useState } from "react";
 import { DeleteModuleDialog } from "./delete-module-dialog";
 

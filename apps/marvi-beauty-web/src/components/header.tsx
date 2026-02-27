@@ -6,7 +6,7 @@ import { Menu, X } from "lucide-react";
 import React from "react";
 import { createClient } from "@repo/lib/supabase/client";
 import { useRouter } from "next/navigation";
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/lib/utils/utils";
 import { AuthButton } from "./auth - supabse/auth-button";
 
 const menuItems = [

@@ -7,7 +7,7 @@ import { Input } from "@repo/ui/input";
 import { Label } from "@repo/ui/label";
 import { Card, CardContent } from "@repo/ui/card";
 import { PriceListCombobox } from "./price-list-combobox";
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/lib/utils/utils";
 
 interface PriceList {
   id: string;

@@ -1,6 +1,6 @@
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@repo/ui/select";
 import { ModuleWithChildren, NewPermissionPayload } from "@repo/lib/utils/definitions";
-import { getIcon } from '@/lib/utils/icons';
+import { getIcon } from '@repo/lib/utils/utils/icons';
 import { Info } from 'lucide-react';
 
 interface PermissionFormProps {

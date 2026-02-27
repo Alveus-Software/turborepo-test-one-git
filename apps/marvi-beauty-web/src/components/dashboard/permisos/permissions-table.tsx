@@ -13,7 +13,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@repo/ui/select";
-import { getIcon } from "@/lib/utils/icons";
+import { getIcon } from "@repo/lib/utils/icons";
 import {
   Popover,
   PopoverContent,

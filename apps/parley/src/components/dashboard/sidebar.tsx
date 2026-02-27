@@ -4,7 +4,7 @@ import Link from "next/link";
 import { User as UserIcon, ChevronDown, ChevronRight } from "lucide-react";
 import { type ModulesHierarchy } from "@/lib/definitions";
 import { type User } from "@/lib/actions/user.actions";
-import { getIcon } from "@/lib/utils/icons";
+import { getIcon } from "@repo/lib/utils/icons";
 import { useEffect, useState } from "react";
 import { getUserWithPermissions } from "@/lib/actions/user.actions";
 import { getImageUrl } from "@/lib/supabase/upload-image";
