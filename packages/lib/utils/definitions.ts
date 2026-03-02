@@ -86,6 +86,7 @@ export interface NewProfilePayload {
   code: string;
   name: string;
   is_write_protected?: boolean; 
+  hierarchy?: number;
   active: boolean;
 }
 
