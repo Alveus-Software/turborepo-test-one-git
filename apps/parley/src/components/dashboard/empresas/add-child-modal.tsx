@@ -16,7 +16,7 @@ import {
   Company,
   getAllCompanies,
   updateCompany,
-} from "@/lib/actions/company.actions";
+} from "@repo/lib/actions/company.actions";
 import { Button } from "@repo/ui/button";
 import { Input } from "@repo/ui/input";
 

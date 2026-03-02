@@ -1,17 +1,12 @@
-import CallToAction from "@/components/call-to-action";
-import FeaturesCards from "@/components/features-1";
-import FeaturesButtons from "@/components/features-12";
-import FooterSection from "@/components/footer";
-import HeroSection from "@/components/hero-section";
-import { WhatsAppFloat } from "@/components/landing/whatsapp-float";
-import SeasonSection from "@/components/season-section";
+import FeaturesCards from "@repo/components/features-1";
+import FooterSection from "@repo/components/footer";
+import HeroSection from "@repo/components/hero-section";
+import { WhatsAppFloat } from "@repo/components/landing/whatsapp-float";
 import { getWhatsAppContacts } from "@repo/lib/utils/whatsapp_contacts";
-import Image from "next/image";
-import ContactSection from "@/components/contact-section";
-import FAQSection from "@/components/faq-section";
-import FloatingInfo from "@/components/landing/floating-info";
+import ContactSection from "@repo/components/contact-section";
+import FAQSection from "@repo/components/faq-section";
 import { getPhoneContacts } from "@repo/lib/utils/phone_contacts";
-import { PhoneFloat } from "@/components/landing/phone-float";
+import { PhoneFloat } from "@repo/components/landing/phone-float";
 ;
 
 

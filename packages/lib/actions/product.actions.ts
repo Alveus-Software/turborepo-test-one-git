@@ -1317,3 +1317,36 @@ export async function updateProductTaxes({
     return { success: false, message: error.message };
   }
 }
+
+/**
+ * Obtiene el precio de un producto en una lista de precios específica
+ * @param productId - ID del producto
+ * @param priceListId - ID de la lista de precios
+ * @returns Precio en esa lista, o null si no tiene precio asignado
+ */
+export async function getProductPriceInPriceList(
+  productId: string,
+  priceListId: string
+): Promise<number | null> {
+  const supabase = await createClient();
+
+  try {
+    const { data, error } = await supabase
+      .from("products_price_lists")
+      .select("price")
+      .eq("product_id", productId)
+      .eq("price_list_id", priceListId)
+      .is("deleted_at", null)
+      .maybeSingle();
+
+    if (error) {
+      console.error("[getProductPriceInPriceList] Error Supabase:", error);
+      return null;
+    }
+
+    return data?.price || null;
+  } catch (error) {
+    console.error("[getProductPriceInPriceList] Error inesperado:", error);
+    return null;
+  }
+}

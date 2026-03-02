@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { getAttendanceHistory, getAttendanceReasons, type AttendanceFilters } from "@/lib/actions/attendance.actions";
-import type { AttendanceTransactionsResponse, AttendanceReason } from "@/lib/actions/attendance.actions";
+import { getAttendanceHistory, getAttendanceReasons, type AttendanceFilters } from "@repo/lib/actions/attendance.actions";
+import type { AttendanceTransactionsResponse, AttendanceReason } from "@repo/lib/actions/attendance.actions";
 import AttendanceHistoryItem from "./attendance-history-item";
 import { Input } from "@repo/ui/input";
 import { Label } from "@repo/ui/label";

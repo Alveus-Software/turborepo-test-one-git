@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Plus, Search, X, Phone, Building2, MapPin } from "lucide-react";
-import { Company, getAllCompanies } from "@/lib/actions/company.actions";
+import { Company, getAllCompanies } from "@repo/lib/actions/company.actions";
 import { Input } from "@repo/ui/input";
 import { Button } from "@repo/ui/button";
 import { AddChildrenModal } from "./add-child-modal";

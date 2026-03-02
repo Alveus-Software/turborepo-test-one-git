@@ -12,7 +12,7 @@ import { Button } from "@repo/ui/button";
 import {
   updateDeliveryTime,
   markOrderAsPrepared,
-} from "@/lib/actions/sale_order.actions";
+} from "@repo/lib/actions/sale_order.actions";
 import { toast } from "sonner";
 
 interface UpdateDeliveryTimeDialogProps {

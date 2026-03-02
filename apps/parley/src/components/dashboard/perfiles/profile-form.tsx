@@ -1,4 +1,4 @@
-import { NewProfilePayload } from "@/lib/definitions";
+import { NewProfilePayload } from "@repo/lib/utils/definitions";
 
 interface ProfileFormProps {
   handleSubmit: (e: React.FormEvent) => void;

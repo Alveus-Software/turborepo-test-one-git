@@ -1,8 +1,8 @@
 'use server'
 import { createClient } from '@/lib/supabase/server';
 import { revalidatePath } from 'next/cache';
-import { type NewModulePayload } from '@/lib/definitions';
-import { type ModulesHierarchy } from '@/lib/definitions';
+import { type NewModulePayload } from '@repo/lib/utils/definitions';
+import { type ModulesHierarchy } from '@repo/lib/utils/definitions';
 import { getCurrentUser } from './user.actions';
 
 export async function createModule(moduleData: NewModulePayload): Promise <

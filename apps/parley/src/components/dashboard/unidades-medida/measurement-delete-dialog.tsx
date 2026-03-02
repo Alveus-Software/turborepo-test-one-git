@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { AlertTriangle, CheckCircle } from 'lucide-react'
 import { toast } from 'sonner'
-import { createClient } from '@/lib/supabase/client'
+import { createClient } from '@repo/lib/supabase/client'
 import { deleteMeasurement, checkMeasurementInUse } from '@/lib/actions/measurement.actions'
 
 interface DeleteMeasurementDialogProps {

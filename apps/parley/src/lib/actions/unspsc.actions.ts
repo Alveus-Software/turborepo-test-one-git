@@ -7,7 +7,7 @@ import type {
   NewUnspscPayload, 
   UpdateUnspscPayload,
   UnspscResponse 
-} from "@/lib/definitions";
+} from "@repo/lib/utils/definitions";
 
 /**
  * Obtiene códigos UNSPSC con paginación

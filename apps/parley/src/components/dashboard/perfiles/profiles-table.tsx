@@ -10,7 +10,7 @@ import {
 import { MoreVertical } from "lucide-react";
 import Link from "next/link";
 import { DeleteProfileDialog } from "./delete-profile-dialog";
-import { ProfilesResponse } from "@/lib/definitions";
+import { ProfilesResponse } from "@repo/lib/utils/definitions";
 
 type ProfilesTableProps = {
   initialData: ProfilesResponse;

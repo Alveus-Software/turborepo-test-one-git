@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import type { Platform } from "@/lib/actions/platform.actions";
+import type { Platform } from "@repo/lib/actions/platform.actions";
 import {
   Globe,
   MoreVertical,

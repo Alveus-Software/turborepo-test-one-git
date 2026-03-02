@@ -3,7 +3,7 @@
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState, useTransition, useEffect, useCallback } from "react";
 import type { UsersResponse } from "@repo/lib/actions/user.actions";
-import { ConfirmDialog } from "@/components/general/confirm-dialog";
+import { ConfirmDialog } from "@repo/components/general/confirm-dialog";
 import { toast } from "sonner";
 import {
   Popover,

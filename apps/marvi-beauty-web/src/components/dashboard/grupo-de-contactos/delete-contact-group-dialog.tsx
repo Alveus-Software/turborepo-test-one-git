@@ -5,7 +5,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import { Button } from '@repo/ui/button'
 import { Input } from '@repo/ui/input'
 import { toast } from 'sonner'
-import { createClient } from '@/lib/supabase/client'
+import { createClient } from '@repo/lib/supabase/client'
 import { deleteContactGroup } from '@repo/lib/actions/contact_group.actions'
 
 interface DeleteContactGroupDialogProps {

@@ -12,7 +12,7 @@ import { Button } from "@repo/ui/button";
 import { Input } from "@repo/ui/input";
 import { toast } from "sonner";
 import { createClient } from "@repo/lib/supabase/client";
-import { removeUserFromAttendance } from "@/lib/actions/attendance.actions";
+import { removeUserFromAttendance } from "@repo/lib/actions/attendance.actions";
 
 interface RemoveUserDialogProps {
   attendanceUserId: string;

@@ -1,7 +1,7 @@
 "use client";
 
 import type React from "react";
-import type { WhatsAppConfigForm } from "@/lib/actions/configuration.actions";
+import type { WhatsAppConfigForm } from "@repo/lib/actions/configuration.actions";
 import Link from "next/link";
 
 interface WhatsAppFormProps {

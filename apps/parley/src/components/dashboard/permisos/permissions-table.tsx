@@ -5,7 +5,7 @@ import { useState, useTransition, useEffect } from "react";
 import type {
   PermissionsResponse,
   ModuleWithChildren,
-} from "@/lib/definitions";
+} from "@repo/lib/utils/definitions";
 import {
   Select,
   SelectContent,

@@ -4,9 +4,9 @@ import { useState, useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { ArrowLeft } from 'lucide-react';
 import { toast } from 'sonner';
-import { getPlatformById, updatePlatform } from '@/lib/actions/platform.actions';
-import { PlatformForm } from '@/components/dashboard/platforms/platform-form';
-import { PlatformSkeleton } from '@/components/dashboard/platforms/platform-skeleton';
+import { getPlatformById, updatePlatform } from '@repo/lib/actions/platform.actions';
+import { PlatformForm } from '@repo/components/dashboard/platforms/platform-form';
+import { PlatformSkeleton } from '@repo/components/dashboard/platforms/platform-skeleton';
 
 interface FormData {
   code: string;

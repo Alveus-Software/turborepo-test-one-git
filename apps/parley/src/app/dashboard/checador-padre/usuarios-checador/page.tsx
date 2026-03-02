@@ -1,6 +1,6 @@
 import { Suspense } from 'react'
-import { getUserWithPermissions } from '@/lib/actions/user.actions'
-import { getAttendanceUsers } from '@/lib/actions/attendance.actions'
+import { getUserWithPermissions } from '@repo/lib/actions/user.actions'
+import { getAttendanceUsers } from '@repo/lib/actions/attendance.actions'
 import AttendanceUsersTable from '@/components/attendance/attendance-users-table'
 import { ArrowLeft } from 'lucide-react'
 

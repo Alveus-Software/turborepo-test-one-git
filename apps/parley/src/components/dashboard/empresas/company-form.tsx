@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
-import { getRootCompanies, Company } from "@/lib/actions/company.actions";
+import { getRootCompanies, Company } from "@repo/lib/actions/company.actions";
 
 export interface EmpresaPayload {
   name: string;

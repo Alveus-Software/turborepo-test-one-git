@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import { getUserWithPermissions } from "@/lib/actions/user.actions";
+import { getUserWithPermissions } from "@repo/lib/actions/user.actions";
 import { Plus } from "lucide-react";
 import { QuotationList } from "@/components/dashboard/quotation/quotation-list";
 

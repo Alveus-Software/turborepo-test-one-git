@@ -20,7 +20,7 @@ import {
   Info,
   Users,
 } from "lucide-react";
-import { getAvailableUsersForAttendance } from "@/lib/actions/attendance.actions";
+import { getAvailableUsersForAttendance } from "@repo/lib/actions/attendance.actions";
 import { toast } from "sonner";
 
 interface UserData {

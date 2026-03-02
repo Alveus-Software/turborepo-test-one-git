@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { ArrowLeft, Loader2 } from "lucide-react";
 import { toast } from "sonner";
-import type { Measurement, Unspsc } from "@/lib/definitions";
+import type { Measurement, Unspsc } from "@repo/lib/utils/definitions";
 import {
   getMeasurementById,
   updateMeasurement,

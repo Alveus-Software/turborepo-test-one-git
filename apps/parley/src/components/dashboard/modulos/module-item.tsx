@@ -1,7 +1,7 @@
 "use client";
 
 import { ChevronDown, ChevronRight, MoreVertical } from "lucide-react";
-import { type Module } from "@/lib/definitions";
+import { type Module } from "@repo/lib/utils/definitions";
 import {
   Popover,
   PopoverContent,

@@ -2,7 +2,7 @@ import Link from "next/link"
 import { Plus, ArrowLeft, PackagePlus } from "lucide-react"
 import { ProductList } from "@/components/dashboard/productos/product-list"
 import { Suspense } from "react"
-import { getUserWithPermissions } from "@/lib/actions/user.actions"
+import { getUserWithPermissions } from "@repo/lib/actions/user.actions"
 
 function ProductListSkeleton() {
   return (

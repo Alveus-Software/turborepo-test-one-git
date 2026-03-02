@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { type OnlineOrder, getOnlineOrders } from "@/lib/actions/sale_order.actions"
+import { type OnlineOrder, getOnlineOrders } from "@repo/lib/actions/sale_order.actions"
 import { OnlineOrderCard } from "./online-order-card"
 import { OnlineOrdersPagination } from "./online-orders-pagination"
 import { OnlineOrdersFilters } from "./online-orders-filters"

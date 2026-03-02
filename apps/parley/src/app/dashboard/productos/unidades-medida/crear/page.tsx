@@ -8,7 +8,7 @@ import { toast } from "sonner";
 import { createMeasurement } from "@/lib/actions/measurement.actions";
 import MeasurementForm from "@/components/dashboard/unidades-medida/measurement-form";
 import { createClient } from "@repo/lib/supabase/client";
-import type { NewMeasurementPayload } from "@/lib/definitions";
+import type { NewMeasurementPayload } from "@repo/lib/utils/definitions";
 
 const supabase = createClient();
 

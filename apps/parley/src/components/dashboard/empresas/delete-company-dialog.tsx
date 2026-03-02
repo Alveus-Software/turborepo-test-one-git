@@ -12,7 +12,7 @@ import { Button } from "@repo/ui/button";
 import { Input } from "@repo/ui/input";
 import { toast } from "sonner";
 import { createClient } from "@repo/lib/supabase/client";
-import { deleteCompany } from "@/lib/actions/company.actions";
+import { deleteCompany } from "@repo/lib/actions/company.actions";
 
 interface DeleteCompanyDialogProps {
   companyId: string;

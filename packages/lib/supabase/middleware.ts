@@ -1,6 +1,6 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
-import { hasEnvVars } from "../utils/utils";
+import { hasEnvVars } from "@repo/lib/utils/utils";
 import { getUserWithPermissions } from "../actions/user.actions";
 
 export async function updateSession(request: NextRequest) {

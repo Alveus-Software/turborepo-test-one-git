@@ -1,5 +1,5 @@
 import { useState } from "react";
-import type { MeasurementForList } from "@/lib/definitions"; 
+import type { MeasurementForList } from "@repo/lib/utils/definitions"; 
 import { Ruler, MoreVertical } from "lucide-react";
 import {
   Popover,

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import AdminAttendanceHistory from "@/components/attendance/admin-attendance-list";
-import { getUserWithPermissions } from "@/lib/actions/user.actions";
+import { getUserWithPermissions } from "@repo/lib/actions/user.actions";
 
 export default async function AdminAttendanceHistoryPage() {
   // Trae los permisos del usuario autenticado

@@ -1,5 +1,5 @@
 // lib/utils/whatsapp_contacts.ts
-import { getWhatsAppConfig } from "@/lib/actions/configuration.actions";
+import { getWhatsAppConfig } from "@repo/lib/actions/configuration.actions";
 
 export async function getWhatsAppContacts() {
   try {

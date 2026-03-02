@@ -2,11 +2,11 @@
 
 import Link from "next/link";
 import { User as UserIcon, ChevronDown, ChevronRight } from "lucide-react";
-import { type ModulesHierarchy } from "@/lib/definitions";
-import { type User } from "@/lib/actions/user.actions";
+import { type ModulesHierarchy } from "@repo/lib/utils/definitions";
+import { type User } from "@repo/lib/actions/user.actions";
 import { getIcon } from "@repo/lib/utils/icons";
 import { useEffect, useState } from "react";
-import { getUserWithPermissions } from "@/lib/actions/user.actions";
+import { getUserWithPermissions } from "@repo/lib/actions/user.actions";
 import { getImageUrl } from "@repo/lib/supabase/upload-image";
 import { usePathname } from "next/navigation";
 

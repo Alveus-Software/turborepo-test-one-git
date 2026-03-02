@@ -41,7 +41,7 @@ import {
 import { Input } from "@repo/ui/input";
 import { Label } from "@repo/ui/label";
 import { DeleteAppointmentAvailableDialog } from "./delete-appointment-available-dialog";
-import { getCurrentUser } from "@/lib/actions/user.actions";
+import { getCurrentUser } from "@repo/lib/actions/user.actions";
 import { toast } from "sonner";
 
 // Importaciones para el calendario

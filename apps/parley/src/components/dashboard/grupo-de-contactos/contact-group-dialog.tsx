@@ -16,7 +16,7 @@ import { Input } from "@repo/ui/input";
 import { Label } from "@repo/ui/label";
 import { Textarea } from "@repo/ui/textarea";
 import { Switch } from "@repo/ui/switch";
-import ImageUpload from "@/components/image-upload";
+import ImageUpload from "@repo/components/image-upload";
 
 interface ContactGroupDialogProps {
   contactGroup: ContactGroup | null;

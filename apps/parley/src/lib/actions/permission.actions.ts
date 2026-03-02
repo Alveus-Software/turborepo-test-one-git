@@ -2,7 +2,7 @@
 
 import { createClient } from '@/lib/supabase/server'
 import { revalidatePath } from 'next/cache'
-import { type NewPermissionPayload, type PermissionsResponse } from '@/lib/definitions'
+import { type NewPermissionPayload, type PermissionsResponse } from '@repo/lib/utils/definitions'
 import { getCurrentUser } from './user.actions'
 
 export async function createPermission(data: NewPermissionPayload) {

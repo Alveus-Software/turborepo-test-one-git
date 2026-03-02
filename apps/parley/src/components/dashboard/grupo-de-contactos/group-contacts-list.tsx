@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import ContactCard from "@/components/contacts/contact-card";
-import { ContactDialog } from "@/components/contacts/contact-dialog";
+import ContactCard from "@repo/components/dashboard/contacts/contact-card";
+import { ContactDialog } from "@repo/components/dashboard/contacts/contact-dialog";
 import {
   Plus,
   Grid3x3,
@@ -14,7 +14,7 @@ import {
   Search,
   Building2,
 } from "lucide-react";
-import { ContactPagination } from "@/components/contacts/conctact-pagination";
+import { ContactPagination } from "@repo/components/dashboard/contacts/conctact-pagination";
 import {
   getContactsByGroupIdPaginated,
   GroupContacts,

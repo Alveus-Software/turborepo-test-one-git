@@ -5,8 +5,8 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { toast } from 'sonner'
-import { createClient } from '@/lib/supabase/client'
-import { deleteCategory } from '@/lib/actions/category.actions'
+import { createClient } from '@repo/lib/supabase/client'
+import { deleteCategory } from '@repo/lib/actions/category.actions'
 
 interface DeleteCategoryDialogProps {
   categoryId: string

@@ -10,8 +10,8 @@ import {
   getAttendanceReasons,
   type AttendanceReason,
   type AttendanceTransaction
-} from "@/lib/actions/attendance.actions";
-import { fetchUserProfile } from "@/lib/actions/user.actions";
+} from "@repo/lib/actions/attendance.actions";
+import { fetchUserProfile } from "@repo/lib/actions/user.actions";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
 import { Avatar, AvatarFallback, AvatarImage } from "@repo/ui/avatar";

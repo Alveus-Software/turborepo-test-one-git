@@ -6,7 +6,7 @@ import MeasurementItem from "./measurement-item";
 import { Button } from "@repo/ui/button";
 import { Plus, Search } from "lucide-react";
 import Link from "next/link";
-import type { MeasurementsResponse } from "@/lib/definitions"; 
+import type { MeasurementsResponse } from "@repo/lib/utils/definitions"; 
 import { getMeasurements } from "@/lib/actions/measurement.actions";
 
 interface MeasurementListProps {

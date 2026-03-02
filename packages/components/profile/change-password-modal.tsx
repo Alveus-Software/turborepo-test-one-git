@@ -24,7 +24,7 @@ import { toast } from "sonner";
 import {
   changePassword,
   canUserChangePassword,
-} from "@/lib/actions/user.actions";
+} from "@repo/lib/actions/user.actions";
 
 interface ChangePasswordModalProps {
   isOpen: boolean;

@@ -15,7 +15,7 @@ import {
   getCompanies,
   type Company,
   type CompaniesResponse,
-} from "@/lib/actions/company.actions";
+} from "@repo/lib/actions/company.actions";
 import { Input } from "@repo/ui/input";
 import { DeleteCompanyDialog } from "./delete-company-dialog";
 import { Button } from "@repo/ui/button";

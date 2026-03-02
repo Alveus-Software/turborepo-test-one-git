@@ -24,8 +24,8 @@ import {
   Calendar1,
   Clock,
 } from "lucide-react";
-import { areReservationsEnabled } from "@/lib/actions/configuration.actions";
-import { isUserInAttendanceList } from "@/lib/actions/attendance.actions";
+import { areReservationsEnabled } from "@repo/lib/actions/configuration.actions";
+import { isUserInAttendanceList } from "@repo/lib/actions/attendance.actions";
 
 export function AuthButton({ mobileView = false }: { mobileView?: boolean }) {
   const supabase = createClient();

@@ -3,7 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { NewProfilePayload } from "../definitions";
 import { createClient } from "../supabase/server";
-import { type ProfilesResponse } from '@/lib/definitions'
+import { type ProfilesResponse } from '@repo/lib/utils/definitions'
 import { getCurrentUser, getUserById } from "./user.actions";
 
 export async function createProfile(profileData: NewProfilePayload): Promise <

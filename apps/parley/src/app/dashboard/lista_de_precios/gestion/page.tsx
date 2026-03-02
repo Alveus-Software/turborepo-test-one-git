@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import { ArrowLeft, Plus } from "lucide-react";
 import Link from "next/link";
-import { getUserWithPermissions } from "@/lib/actions/user.actions";
+import { getUserWithPermissions } from "@repo/lib/actions/user.actions";
 
 import { PriceListsTable } from "@/components/dashboard/lista-de-precios/price_list-table";
 

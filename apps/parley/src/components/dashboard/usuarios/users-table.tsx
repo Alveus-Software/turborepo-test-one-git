@@ -2,8 +2,8 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState, useTransition, useEffect, useCallback } from "react";
-import type { UsersResponse } from "@/lib/actions/user.actions";
-import { ConfirmDialog } from "@/components/general/confirm-dialog";
+import type { UsersResponse } from "@repo/lib/actions/user.actions";
+import { ConfirmDialog } from "@repo/components/general/confirm-dialog";
 import { toast } from "sonner";
 import {
   Popover,
@@ -15,7 +15,7 @@ import Link from "next/link";
 import {
   getUserWithPermissions,
   toggleUserActive,
-} from "@/lib/actions/user.actions";
+} from "@repo/lib/actions/user.actions";
 
 type UsersTableProps = {
   initialData: UsersResponse;

@@ -6,8 +6,8 @@ import { useState, useEffect } from "react";
 import {
   getSocialMediaConfigs,
   type SocialMediaData,
-} from "@/lib/actions/configuration.actions";
-import { getUserWithPermissions } from "@/lib/actions/user.actions";
+} from "@repo/lib/actions/configuration.actions";
+import { getUserWithPermissions } from "@repo/lib/actions/user.actions";
 import { toast } from "sonner";
 
 const ContactSection = () => {

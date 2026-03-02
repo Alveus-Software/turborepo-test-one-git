@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { createContact } from "@/lib/actions/contact.actions";
-import { getUsers, User } from "@/lib/actions/user.actions";
+import { getUsers, User } from "@repo/lib/actions/user.actions";
 
 export function ContactForm() {
   const router = useRouter();

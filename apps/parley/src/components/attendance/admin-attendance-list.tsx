@@ -6,11 +6,11 @@ import {
   getAttendanceReasons,
   getUsersWithAttendanceRecords,
   type AttendanceFilters,
-} from "@/lib/actions/attendance.actions";
+} from "@repo/lib/actions/attendance.actions";
 import type {
   AttendanceTransactionsResponse,
   AttendanceReason,
-} from "@/lib/actions/attendance.actions";
+} from "@repo/lib/actions/attendance.actions";
 import AttendanceHistoryItem from "./attendance-history-item";
 import { Input } from "@repo/ui/input";
 import { Label } from "@repo/ui/label";

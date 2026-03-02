@@ -18,7 +18,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@repo/ui/popover";
-import { OnlineOrder } from "@/lib/actions/sale_order.actions";
+import { OnlineOrder } from "@repo/lib/actions/sale_order.actions";
 import { useOnlineOrderActions } from "@/components/dashboard/pedidos-en-linea/online-order-actions";
 import { format, formatDistanceToNow } from "date-fns";
 import { es } from "date-fns/locale";

@@ -1,5 +1,5 @@
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@repo/ui/select";
-import { ModuleWithChildren, NewPermissionPayload } from "@/lib/definitions";
+import { ModuleWithChildren, NewPermissionPayload } from "@repo/lib/utils/definitions";
 import { getIcon } from '@repo/lib/utils/icons';
 import { Info } from 'lucide-react';
 

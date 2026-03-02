@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Plus, ArrowLeft } from "lucide-react";
 import { CategoryList } from "@/components/dashboard/categorias/category-list";
 import { Suspense } from "react";
-import { getUserWithPermissions } from "@/lib/actions/user.actions";
+import { getUserWithPermissions } from "@repo/lib/actions/user.actions";
 import { CategoryListSkeleton } from "@/components/dashboard/categorias/category-list-skeleton";
 
 export default async function CategoriesPage() {

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import type { AttendanceTransaction } from "@/lib/actions/attendance.actions";
+import type { AttendanceTransaction } from "@repo/lib/actions/attendance.actions";
 import { LogIn, LogOut, Info } from "lucide-react";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";

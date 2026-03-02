@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { deleteModule } from '@/lib/actions/module.actions'
+import { deleteModule } from '@repo/lib/actions/module.actions'
 import { toast } from 'sonner'
 
 interface DeleteModuleDialogProps {

@@ -2,7 +2,7 @@
 
 import type React from "react"
 import type { ContactGroup } from "./contact-group-list"
-import ImageUpload from "@/components/image-upload"
+import ImageUpload from "@repo/components/image-upload"
 
 interface ContactGroupFormProps {
   handleSubmit: (e: React.FormEvent) => void

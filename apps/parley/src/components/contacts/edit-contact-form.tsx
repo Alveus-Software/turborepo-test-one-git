@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { getContactById, updateContact } from "@/lib/actions/contact.actions";
-import { getUsers, User, getUserById } from "@/lib/actions/user.actions";
+import { getUsers, User, getUserById } from "@repo/lib/actions/user.actions";
 
 interface EditContactFormProps {
   contactId: string;

@@ -1,4 +1,4 @@
-import { getPhoneConfig } from "@/lib/actions/configuration.actions";
+import { getPhoneConfig } from "@repo/lib/actions/configuration.actions";
 
 export async function getPhoneContacts() {
   try {

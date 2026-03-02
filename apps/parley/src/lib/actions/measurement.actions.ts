@@ -8,7 +8,7 @@ import type {
   UpdateMeasurementPayload,
   MeasurementsResponse,
   Unspsc
-} from "@/lib/definitions";
+} from "@repo/lib/utils/definitions";
 
 /**
  * Obtiene unidades de medida con paginación

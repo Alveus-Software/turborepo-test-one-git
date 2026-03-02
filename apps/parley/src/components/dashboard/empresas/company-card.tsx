@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import type { Company } from "@/lib/actions/company.actions";
+import type { Company } from "@repo/lib/actions/company.actions";
 import {
   MapPin,
   Phone,

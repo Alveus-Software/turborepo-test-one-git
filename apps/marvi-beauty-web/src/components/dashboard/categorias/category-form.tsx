@@ -2,7 +2,7 @@
 
 import type React from "react"
 import type { ProductCategory } from "./category-list"
-import ImageUpload from "@/components/image-upload"
+import ImageUpload from "@repo/components/image-upload"
 
 interface CategoryFormProps {
   handleSubmit: (e: React.FormEvent) => void

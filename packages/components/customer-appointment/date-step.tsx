@@ -27,7 +27,7 @@ import {
   endOfWeek,
 } from "date-fns";
 import { es } from "date-fns/locale";
-import { getMinReservationTimeMinutes } from "@/lib/actions/configuration.actions";
+import { getMinReservationTimeMinutes } from "@repo/lib/actions/configuration.actions";
 
 interface AvailableSlot {
   id: string;

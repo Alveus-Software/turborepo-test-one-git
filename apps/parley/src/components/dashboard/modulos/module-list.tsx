@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { ModuleItem } from './module-item'
-import { type ModulesHierarchy } from '@/lib/definitions'
+import { type ModulesHierarchy } from '@repo/lib/utils/definitions'
 
 interface ModuleListProps {
   modules: ModulesHierarchy

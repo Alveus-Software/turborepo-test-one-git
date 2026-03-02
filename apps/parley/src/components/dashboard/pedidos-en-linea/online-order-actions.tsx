@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { OnlineOrder } from "@/lib/actions/sale_order.actions";
+import { OnlineOrder } from "@repo/lib/actions/sale_order.actions";
 
 interface OnlineOrderActionsProps {
   order: OnlineOrder;

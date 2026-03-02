@@ -20,7 +20,7 @@ import {
   Ban,
 } from "lucide-react";
 import { CancelAppointmentDialog } from "./cancel-appointment-dialog";
-import { getCancellationTimeMinutes, canCancelAppointment } from "@/lib/actions/configuration.actions";
+import { getCancellationTimeMinutes, canCancelAppointment } from "@repo/lib/actions/configuration.actions";
 import { toast } from "sonner";
 
 interface AppointmentDetail {

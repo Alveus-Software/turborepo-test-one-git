@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { renderAsync } from "@react-email/render";
-import ReminderTemplate from "@/components/email/reminder-template";
+import ReminderTemplate from "@repo/components/email/reminder-template";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 

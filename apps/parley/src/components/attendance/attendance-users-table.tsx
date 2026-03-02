@@ -2,7 +2,7 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState, useTransition, useEffect, useCallback } from "react";
-import type { AttendanceUsersResponse } from "@/lib/actions/attendance.actions";
+import type { AttendanceUsersResponse } from "@repo/lib/actions/attendance.actions";
 import { toast } from "sonner";
 import {
   Popover,
@@ -14,7 +14,7 @@ import {
   getAttendanceUsers,
   removeUserFromAttendance,
   addUserToAttendance,
-} from "@/lib/actions/attendance.actions";
+} from "@repo/lib/actions/attendance.actions";
 import { SelectUserModal } from "./select-user-modal";
 import { RemoveUserDialog } from "./delete-user-attendance-dialog";
 

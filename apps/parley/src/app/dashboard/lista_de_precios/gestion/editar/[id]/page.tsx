@@ -2,7 +2,7 @@
 import { getPriceListById } from "@/lib/actions/price_list.actions";
 import PriceListForm from "@/components/dashboard/lista-de-precios/price_list-form";
 import { notFound, redirect } from "next/navigation";
-import { getUserWithPermissions } from "@/lib/actions/user.actions";
+import { getUserWithPermissions } from "@repo/lib/actions/user.actions";
 
 interface EditPriceListPageProps {
   params: Promise<{

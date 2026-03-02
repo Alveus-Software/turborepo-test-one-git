@@ -16,7 +16,7 @@ import {
   getPlatforms,
   type Platform,
   type PlatformsResponse,
-} from "@/lib/actions/platform.actions";
+} from "@repo/lib/actions/platform.actions";
 import {
   Select,
   SelectContent,

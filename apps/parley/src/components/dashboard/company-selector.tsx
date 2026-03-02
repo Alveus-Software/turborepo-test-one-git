@@ -7,7 +7,7 @@ import {
   PopoverTrigger,
 } from "@repo/ui/popover";
 import { useState, useEffect } from "react";
-import { getAllCompanies, Company } from "@/lib/actions/company.actions";
+import { getAllCompanies, Company } from "@repo/lib/actions/company.actions";
 import { toast } from "sonner";
 import { useCompany } from "@/app/providers/company-provider";
 

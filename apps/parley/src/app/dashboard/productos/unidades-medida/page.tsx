@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Plus, ArrowLeft } from "lucide-react";
 import { MeasurementList } from "@/components/dashboard/unidades-medida/measurement-list";
 import { Suspense } from "react";
-import { getUserWithPermissions } from "@/lib/actions/user.actions";
+import { getUserWithPermissions } from "@repo/lib/actions/user.actions";
 import { CategoryListSkeleton } from "@/components/dashboard/categorias/category-list-skeleton";
 
 export default async function measurementsPage() {

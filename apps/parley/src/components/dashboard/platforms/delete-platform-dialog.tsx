@@ -12,7 +12,7 @@ import { Button } from "@repo/ui/button";
 import { Input } from "@repo/ui/input";
 import { toast } from "sonner";
 import { createClient } from "@repo/lib/supabase/client";
-import { deletePlatform } from "@/lib/actions/platform.actions";
+import { deletePlatform } from "@repo/lib/actions/platform.actions";
 
 interface DeletePlatformDialogProps {
   platformId: string;
