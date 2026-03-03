@@ -33,7 +33,7 @@ export const HeroHeader = () => {
       <img
         src="/assets/landing/logo-narvbarparley.png"
         alt="Parley"
-        className="h-22 md:h-28 w-auto object-contain"
+        className="h-14 md:h-16 w-auto object-contain"
       />
     );
   };
