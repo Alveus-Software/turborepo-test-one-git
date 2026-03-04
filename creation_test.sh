@@ -1,7 +1,8 @@
 #!/bin/bash
 
-NAME="test"
+NAME="pedroempresa"
 EMAIL="maguhoyossi@ittepic.edu.mx"
+DOMAIN="pruebamonorepo.alveussoft.com"
 
 npx turbo gen workspace --type=app --name=$NAME --destination=apps/$NAME --copy=base
 
@@ -35,12 +36,12 @@ vercel link --cwd apps/$NAME --project $NAME
 
 echo "Enlazado del proyecto exitoso"
 
-vercel domains add $NAME-alveus.vercel.app
+vercel domains add $DOMAIN
 
 echo "Añadido del dominio exitoso"
 
 vercel --cwd apps/$NAME
 
-echo "Deploy del test exitoso"
+echo "Deploy de $NAME exitoso"
 
 vercel logout 
