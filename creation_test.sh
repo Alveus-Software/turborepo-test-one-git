@@ -5,6 +5,12 @@ EMAIL="maguhoyossi@ittepic.edu.mx"
 
 npx turbo gen workspace --type=app --name=$NAME --destination=apps/$NAME --copy=base
 
+cd apps/$NAME
+
+npm i --force
+
+cd ../../
+
 git add .
 
 git commit -m "Añadido de $NAME en apps"
