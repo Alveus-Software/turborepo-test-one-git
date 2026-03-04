@@ -37,4 +37,4 @@ vercel --cwd apps/$NAME
 
 echo "Deploy del test exitoso"
 
-vercel logout
+vercel logout 
