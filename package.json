@@ -11,7 +11,7 @@
   "devDependencies": {
     "prettier": "^3.7.4",
     "supabase": "^2.76.9",
-    "turbo": "^2.8.12",
+    "turbo": "^2.8.13",
     "typescript": "5.9.2"
   },
   "engines": {
@@ -23,6 +23,7 @@
     "packages/*"
   ],
   "dependencies": {
+    "@turbo/gen": "^2.8.13",
     "styled-jsx": "^5.1.7"
   }
 }

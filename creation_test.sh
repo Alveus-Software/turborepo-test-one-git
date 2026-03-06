@@ -1,8 +1,8 @@
 #!/bin/bash
 
-NAME="pedroempresa"
-EMAIL="maguhoyossi@ittepic.edu.mx"
-DOMAIN="pruebamonorepo.alveussoft.com"
+NAME="pedroempresa"                         # Nombre del proyecto
+EMAIL="maguhoyossi@ittepic.edu.mx"          # Correo al que se conectará la aplicación
+DOMAIN="pruebamonorepo.alveussoft.com"      # Dominio que se enlazará a la naplicación
 
 npx turbo gen workspace --type=app --name=$NAME --destination=apps/$NAME --copy=base
 
