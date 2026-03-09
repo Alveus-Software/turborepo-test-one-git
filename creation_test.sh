@@ -1,12 +1,30 @@
 #!/bin/bash
 
-NAME="pedroempresa"                         # Nombre del proyecto
+NAME="kestreltest"                         # Nombre del proyecto
 EMAIL="maguhoyossi@ittepic.edu.mx"          # Correo al que se conectará la aplicación
-DOMAIN="pruebamonorepo.alveussoft.com"      # Dominio que se enlazará a la naplicación
+DOMAIN="kestreltest.vercel.app"      # Dominio que se enlazará a la naplicación
+CONNECTIONSTRING="postgresql://postgres:wsVDLq67PCKEINdJ@db.wihcefsmgiuxiamuvyfy.supabase.co:5432/postgres" # String de conexión Marvi 
+PROJECTID="kstfimilolfdkubyctgy" # ID de la BD en supabase a la que se debe enlazar la aplicación
 
 npx turbo gen workspace --type=app --name=$NAME --destination=apps/$NAME --copy=base
 
 cd apps/$NAME
+
+npx supabase init
+
+npx supabase db diff -f initCommit --db-url $CONNECTIONSTRING 
+
+npx supabase db dump --data-only -f supabase/seed.sql --db-url $CONNECTIONSTRING
+
+npx supabase start
+
+npx supabase login
+
+npx supabase link --project-ref $PROJECTID
+
+npx supabase db push
+
+npx supabase stop
 
 npm i --force
 
